@@ -1,22 +1,31 @@
 import styled from "styled-components";
+import { Colors } from "../../Theme/Colors";
+export const MainWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: ${Colors.mainTheme};
+`;
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: max-content;
 `;
-export const MainWrapper = styled.div`
-  height: 30rem;
+
+export const ScrollWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 40rem;
   width: 100vw;
   overflow-y: hidden;
   overflow-x: scroll;
-  background-color: black;
+  background-color: ${Colors.mainTheme};
   ::-webkit-scrollbar {
-    width: 5px;
-    background-color: black;
+    background-color: #0000;
   }
   ::-webkit-scrollbar-track {
-    border-radius: 5px;
+    height: 5px;
   }
   ::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 5px grey;

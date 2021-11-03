@@ -5,11 +5,21 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ColorModeScript } from "@chakra-ui/react";
 import theme from "./Theme/theme.js";
+import { createStore } from "redux";
+import rootReducers from "./reducers/index";
+import { Provider } from "react-redux";
+
+const store = createStore(
+  rootReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-    <App />
+    <Provider store={store}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

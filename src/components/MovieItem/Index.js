@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { imageBase } from "../../Constatns/ImageBase";
 import { CircularProgressWrapper, Title, Wrapper } from "./Styled";
 import {
-  Heading,
+  Text,
   Box,
   CircularProgress,
   CircularProgressLabel,
@@ -13,56 +13,34 @@ import { motion } from "framer-motion";
 export const MovieItem = ({
   poster_path,
   overview,
+  release_date,
   vote_average,
   original_title,
   original_name,
+  backdrop_path,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   return (
     <Wrapper>
-      <motion.button
-        onHoverStart={() => setIsOpen(true)}
-        onHoverEnd={() => {
-          setIsOpen(false);
-          setIsLiked(false);
-        }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={() => setIsLiked(!isLiked)}
-      >
-        <img src={`${imageBase}${poster_path}`} alt="film" />
-        {isLiked ? (
-          <Title>
-            <Heading fontSize="xs" margin="1rem" color="black">
-              {overview}
-            </Heading>
-          </Title>
-        ) : (
-          isOpen && (
-            <Title>
-              <Box margin="3em">
-                <StarIcon
-                  marginBottom="1rem"
-                  w={6}
-                  h={6}
-                  color={!isLiked ? "white" : "gold"}
-                />
-                <Heading fontSize="s" color="wheat" margin="1rem">
-                  {original_title || original_name}
-                </Heading>
-                <CircularProgressWrapper>
-                  <CircularProgress color="red" value={vote_average * 10}>
-                    <CircularProgressLabel color="white">
-                      {vote_average}
-                    </CircularProgressLabel>
-                  </CircularProgress>
-                </CircularProgressWrapper>
-              </Box>
-            </Title>
-          )
-        )}
-      </motion.button>
+      <img src={`${imageBase}${poster_path}`} alt="film" />
+      <CircularProgressWrapper>
+        <CircularProgress
+          thickness="12px"
+          value={vote_average * 10}
+          color="red"
+        >
+          <CircularProgressLabel color="white" fontSize="xs">
+            {vote_average}
+          </CircularProgressLabel>
+        </CircularProgress>
+      </CircularProgressWrapper>
+      <Text color="wheat" fontSize="xs">
+        {release_date}
+      </Text>
+      <Text fontSize="xs" margin="1rem" color="white" width="14rem">
+        {overview}
+      </Text>
     </Wrapper>
   );
 };
