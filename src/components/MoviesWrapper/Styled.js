@@ -23,9 +23,11 @@ export const ScrollWrapper = styled.div`
   background-color: ${Colors.mainTheme};
   ::-webkit-scrollbar {
     background-color: #0000;
+    height: 10px;
   }
   ::-webkit-scrollbar-track {
     height: 5px;
+    background-color: ${Colors.mainTheme};
   }
   ::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 5px grey;
@@ -34,5 +36,13 @@ export const ScrollWrapper = styled.div`
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+
+  button {
+    margin: 0 1rem 01rem;
   }
 `;

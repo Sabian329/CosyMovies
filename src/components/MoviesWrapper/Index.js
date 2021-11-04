@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { MovieItem } from "../MovieItem/Index";
-import { MainWrapper, ScrollWrapper, Wrapper } from "./Styled";
-import { Heading } from "@chakra-ui/layout";
+import { ButtonWrapper, MainWrapper, ScrollWrapper, Wrapper } from "./Styled";
+import { Heading, Box } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { Baselink } from "../../Constatns/Api.js";
-import { increment, popularMovie, popularTv } from "../../actions";
-import { decrement } from "../../actions";
+import { popularMovie, popularTv } from "../../actions";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { ArrowRightIcon, ArrowLeftIcon } from "@chakra-ui/icons";
 
 export const MoviesWrapper = () => {
   const [apiData, setApiData] = useState([]);
@@ -15,12 +15,13 @@ export const MoviesWrapper = () => {
   const [errors, setErrors] = useState(false);
   const [pageNum, setPageNum] = useState(1);
 
-  const counter = useSelector((state) => state.counter);
   const variant = useSelector((state) => state.variant);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(`${Baselink.base}${variant}${Baselink.key}${Baselink.page}${counter}`)
+    fetch(
+      `${Baselink.base}${Baselink.popular}${Baselink.key}${Baselink.page}${pageNum}`
+    )
       .then((res) => res.json())
       .then(
         (result) => {
@@ -33,18 +34,33 @@ export const MoviesWrapper = () => {
           setErrors(error);
         }
       );
-  }, [counter, variant]);
+  }, [pageNum, variant]);
 
   return (
     <MainWrapper>
-      <Heading color="white" padding="1rem">
-        Most Popular
+      <Heading color="white" padding="1rem" fontWeight="light">
+        {variant.split("/")[1].charAt(0).toUpperCase() +
+          variant.split("/")[1].slice(1)}
       </Heading>
-      <Button onClick={() => dispatch(increment())}>{`+`}</Button>
-      <Button onClick={() => dispatch(decrement())}>{`-`}</Button>
-      <Button onClick={() => dispatch(popularMovie())}>movie</Button>
-      <Button onClick={() => dispatch(popularTv())}>tv</Button>
-      <Heading>{counter}</Heading>
+      <ButtonWrapper>
+        <Button
+          onClick={() => setPageNum(pageNum === 1 ? pageNum : pageNum - 1)}
+        >
+          <ArrowLeftIcon />
+        </Button>
+        <Heading color="white" fontWeight="light">
+          {pageNum}
+        </Heading>
+        <Button onClick={() => setPageNum(pageNum + 1)}>
+          <ArrowRightIcon />
+        </Button>
+        <Button fontWeight="light" onClick={() => dispatch(popularMovie())}>
+          {variant}
+        </Button>
+        <Button fontWeight="light" onClick={() => dispatch(popularTv())}>
+          tv
+        </Button>
+      </ButtonWrapper>
       <ScrollWrapper>
         <Wrapper>
           {apiData?.results?.map((item) => (
