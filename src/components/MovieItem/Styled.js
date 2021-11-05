@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { Colors } from "../../Theme/Colors";
+import { Sizing } from "../../Theme/Sizing";
+import { device } from "../../Theme/MediaQueries";
+import { Margins } from "../../Theme/Sizing";
 
 export const MainWrapper = styled.div`
   position: relative;
@@ -13,16 +16,25 @@ export const Wrapper = styled.div`
   align-items: center;
   display: inline-block;
   border-radius: 26px;
-  height: 36rem;
-  width: 20rem;
-  margin: 0 1rem 0 1rem;
+  height: ${Sizing.mainBoxHeight};
+  width: ${Sizing.mainBoxWidth};
+  margin: ${Margins.Box};
   -webkit-box-shadow: 5px 5px 20px ${Colors.shadow};
   box-shadow: 5px 5px 20px ${Colors.shadow};
   overflow-y: hidden;
+  @media ${device.tablet} {
+    width: ${Sizing.mobileBoxWidth};
+    height: ${Sizing.mobileBoxHeight};
+    margin: ${Margins.MobileBox};
+  }
   img {
     border-radius: 15px 15px 0 0;
-    height: 30rem;
-    width: 20rem;
+    height: ${Sizing.mainImageHeight};
+    width: ${Sizing.mainBoxWidth};
+    @media ${device.tablet} {
+      height: ${Sizing.mobileImageHeight};
+      width: ${Sizing.mobileBoxWidth};
+    }
   }
 `;
 

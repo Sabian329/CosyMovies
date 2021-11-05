@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { Colors } from "../../Theme/Colors";
+import { Sizing } from "../../Theme/Sizing";
+import { device } from "../../Theme/MediaQueries";
 export const MainWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   background-color: ${Colors.mainTheme};
+  @media ${device.tablet} {
+    align-items: center;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -16,11 +20,14 @@ export const Wrapper = styled.div`
 export const ScrollWrapper = styled.div`
   display: flex;
   align-items: center;
-  height: 40rem;
+  height: ${Sizing.mainBoxWrapperHeight};
   width: 100vw;
   overflow-y: hidden;
   overflow-x: scroll;
   background-color: ${Colors.mainTheme};
+  @media ${device.tablet} {
+    height: ${Sizing.mobileScrollBoxWrapperHeight};
+  }
   ::-webkit-scrollbar {
     background-color: #0000;
     height: 10px;
@@ -41,8 +48,11 @@ export const ScrollWrapper = styled.div`
 
 export const ButtonWrapper = styled.div`
   display: flex;
-
-  button {
-    margin: 0 1rem 01rem;
+  margin: 1rem;
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.1rem;
   }
 `;

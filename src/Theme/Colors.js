@@ -1,6 +1,5 @@
 export const Colors = {
   mainTheme1: "#494a4d",
-  mainTheme: "#000000",
-  mainTheme2: "#be5fd9",
-  shadow: "rgba(215, 215, 215, 0.1)",
+  mainTheme: "#2b2b2b",
+  shadow: "rgba(0, 0, 0, 0.5)",
 };

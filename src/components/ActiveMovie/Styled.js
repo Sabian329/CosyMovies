@@ -1,15 +1,47 @@
 import styled from "styled-components";
 import { Colors } from "../../Theme/Colors";
+import { Margins, Sizing } from "../../Theme/Sizing";
+import { device } from "../../Theme/MediaQueries";
 
 export const Wrapper = styled.div`
+  background-color: black;
   position: relative;
-  border-radius: 26px 0 0 26px;
-  height: 36rem;
-  width: 20rem;
-  margin: 0 1rem 0 1rem;
+  border-radius: 26px;
+  height: ${Sizing.mainBoxHeight};
+  width: ${Sizing.mainBoxWidth};
+  margin: ${Margins.Box};
   -webkit-box-shadow: 5px 5px 20px ${Colors.shadow};
   box-shadow: 5px 5px 20px ${Colors.shadow};
+  padding-top: 0.5rem;
+  @media ${device.tablet} {
+    width: ${Sizing.mobileBoxWidth};
+    height: ${Sizing.mobileBoxHeight};
+    margin: ${Margins.MobileBox};
+  }
+
+  p {
+    color: white;
+    margin: 1rem;
+    font-size: 0.9rem;
+  }
+`;
+export const MoviePoster = styled.img`
+  position: absolute;
+  bottom: 0;
+  height: 12rem;
+  border-radius: 0 0 26px 26px;
+  @media ${device.tablet} {
+    height: ${Sizing.mobileSmallImageHeight};
+  }
+`;
+
+export const OverviewWrapper = styled.div`
+  height: ${Sizing.overviewHeight};
   overflow-y: scroll;
+
+  @media ${device.tablet} {
+    height: ${Sizing.mobileoverviewHeight};
+  }
   ::-webkit-scrollbar {
     background-color: #0000;
     width: 5px;
@@ -26,10 +58,4 @@ export const Wrapper = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000;
   }
-  p {
-    color: white;
-    margin: 1rem;
-    font-size: 0.9rem;
-  }
 `;
-export const MoviePoster = styled.img``;

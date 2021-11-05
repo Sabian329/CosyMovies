@@ -1,7 +1,8 @@
 import { Heading, Text } from "@chakra-ui/layout";
 import React from "react";
-import { MoviePoster, Wrapper } from "./Styled";
+import { MoviePoster, OverviewWrapper, Wrapper } from "./Styled";
 import { imageBase } from "../../Constatns/ImageBase";
+import moviePicture from "../../Asets/moviePoster.jpg";
 
 export const ActiveMovie = ({
   original_title,
@@ -16,13 +17,20 @@ export const ActiveMovie = ({
         textAlign="center"
         fontSize="xl"
         color="wheat"
-        mt="1rem
+        margin="1rem
         "
       >
         {original_name || original_title}
       </Heading>
-      <Text>{overview}</Text>
-      <MoviePoster src={`${imageBase}${backdrop_path}`} alt="moviePoster" />
+      <OverviewWrapper>
+        <Text>{overview}</Text>
+      </OverviewWrapper>
+      <MoviePoster
+        src={`${
+          backdrop_path === null ? moviePicture : imageBase + backdrop_path
+        }`}
+        alt="moviePoster"
+      />
     </Wrapper>
   );
 };
