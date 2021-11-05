@@ -4,6 +4,7 @@ import {
   ButtonWrapper,
   MainWrapper,
   NameBtn,
+  NameBtnWrapper,
   ScrollWrapper,
   Wrapper,
 } from "./Styled";
@@ -46,26 +47,28 @@ export const MoviesWrapper = ({ option }) => {
 
   return (
     <MainWrapper>
-      <NameBtn>
-        <Heading color="white" padding="1rem" fontWeight="light">
-          {option.charAt(0).toUpperCase() + option.slice(1)}
-        </Heading>
+      <NameBtnWrapper>
+        <NameBtn>
+          <Heading color="white" padding="1rem" fontWeight="light">
+            {option.charAt(0).toUpperCase() + option.slice(1)}
+          </Heading>
 
-        <Button
-          w="5rem"
-          bg={Colors.mainTheme1}
-          fontWeight="medium"
-          color={Colors.red}
-          onClick={() => {
-            ResetPageAndSetOption();
-          }}
-        >
-          {DisplayOption()}
-        </Button>
-      </NameBtn>
-      <ButtonWrapper>
-        <Pagination setPageNum={setPageNum} pageNum={pageNum} />
-      </ButtonWrapper>
+          <Button
+            w="5rem"
+            bg={Colors.mainTheme1}
+            fontWeight="medium"
+            color={Colors.red}
+            onClick={() => {
+              ResetPageAndSetOption();
+            }}
+          >
+            {DisplayOption()}
+          </Button>
+        </NameBtn>
+        <ButtonWrapper>
+          <Pagination setPageNum={setPageNum} pageNum={pageNum} />
+        </ButtonWrapper>
+      </NameBtnWrapper>
       <ScrollWrapper>
         <Wrapper>
           {apiData?.results?.map((item) => (

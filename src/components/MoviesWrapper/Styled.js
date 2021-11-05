@@ -51,16 +51,28 @@ export const ScrollWrapper = styled.div`
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  align-items: center;
+
   @media ${device.tablet} {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0.1rem;
   }
 `;
 
 export const NameBtn = styled.div`
   display: flex;
   align-items: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+export const NameBtnWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 5rem;
+  width: 100%;
 `;
