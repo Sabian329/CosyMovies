@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { MovieItem } from "../MovieItem/Index";
-import { ButtonWrapper, MainWrapper, ScrollWrapper, Wrapper } from "./Styled";
+import {
+  ButtonWrapper,
+  MainWrapper,
+  NameBtn,
+  ScrollWrapper,
+  Wrapper,
+} from "./Styled";
 import { Heading } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { Baselink } from "../../Constatns/Api.js";
@@ -40,20 +46,24 @@ export const MoviesWrapper = ({ option }) => {
 
   return (
     <MainWrapper>
-      <Heading color="white" padding="1rem" fontWeight="light">
-        {option.charAt(0).toUpperCase() + option.slice(1)}
-      </Heading>
-      <ButtonWrapper>
+      <NameBtn>
+        <Heading color="white" padding="1rem" fontWeight="light">
+          {option.charAt(0).toUpperCase() + option.slice(1)}
+        </Heading>
+
         <Button
+          w="5rem"
           bg={Colors.mainTheme1}
           fontWeight="medium"
-          color="white"
+          color={Colors.red}
           onClick={() => {
             ResetPageAndSetOption();
           }}
         >
           {DisplayOption()}
         </Button>
+      </NameBtn>
+      <ButtonWrapper>
         <Pagination setPageNum={setPageNum} pageNum={pageNum} />
       </ButtonWrapper>
       <ScrollWrapper>

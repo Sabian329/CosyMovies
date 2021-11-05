@@ -33,14 +33,14 @@ export const Pagination = ({ pageNum, setPageNum }) => {
       )}
       {!isMobile && (
         <>
-          <Button onClick={() => setPageNum(1)}>1</Button>
-          <Button
+          {/* <Button onClick={() => setPageNum(1)}>1</Button> */}
+          {/* <Button
             onClick={() =>
               pageNum >= 3 ? setPageNum(pageNum - 2) : setPageNum(1)
             }
           >
             <ArrowLeftIcon />
-          </Button>
+          </Button> */}
 
           <CenterBtns>
             {pageNum !== 1 && (
@@ -62,11 +62,11 @@ export const Pagination = ({ pageNum, setPageNum }) => {
             </Button>
           </CenterBtns>
 
-          <Button onClick={() => setPageNum(pageNum + 2)}>
+          {/* <Button onClick={() => setPageNum(pageNum + 2)}>
             <ArrowRightIcon />
-          </Button>
+          </Button> */}
 
-          <Button onClick={() => setPageNum(50)}>50</Button>
+          {/* <Button onClick={() => setPageNum(50)}>50</Button> */}
         </>
       )}
       <Button onClick={() => setPageNum(pageNum + 1)}>

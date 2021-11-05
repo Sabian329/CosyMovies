@@ -6,6 +6,7 @@ export const MainWrapper = styled.section`
   display: flex;
   flex-direction: column;
   background-color: ${Colors.mainTheme};
+
   @media ${device.tablet} {
     align-items: center;
   }
@@ -15,6 +16,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: max-content;
+  cursor: pointer;
 `;
 
 export const ScrollWrapper = styled.div`
@@ -48,6 +50,7 @@ export const ScrollWrapper = styled.div`
 
 export const ButtonWrapper = styled.div`
   display: flex;
+  justify-content: center;
   margin: 1rem;
   @media ${device.tablet} {
     flex-direction: column;
@@ -55,4 +58,9 @@ export const ButtonWrapper = styled.div`
     justify-content: center;
     margin: 0.1rem;
   }
+`;
+
+export const NameBtn = styled.div`
+  display: flex;
+  align-items: center;
 `;

@@ -30,6 +30,16 @@ export const MoviePoster = styled.img`
   bottom: 0;
   height: 12rem;
   border-radius: 0 0 26px 26px;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.8, black),
+    color-stop(0.2, black),
+    color-stop(0.4, black),
+    color-stop(0, rgba(0, 0, 0, 0.6)),
+    color-stop(0, rgba(0, 0, 0, 0))
+  );
   @media ${device.tablet} {
     height: ${Sizing.mobileSmallImageHeight};
   }

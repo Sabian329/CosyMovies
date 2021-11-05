@@ -17,6 +17,6 @@ export const Wrapper = styled.div`
 
 export const CenterBtns = styled.div`
   button {
-    background-color: #a6362e;
+    background-color: ${Colors.red};
   }
 `;
