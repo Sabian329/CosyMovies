@@ -9,7 +9,6 @@ import {
 import { motion } from "framer-motion";
 import { ActiveMovie } from "../ActiveMovie/Index";
 import { AnimatePresence } from "framer-motion";
-import { Sizing } from "../../Theme/Sizing";
 
 const variants = {
   open: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -71,7 +70,7 @@ export const MovieItem = ({
                 color="white"
                 padding="1rem"
               >
-                {overview.substring(0, 100) + "..."}
+                {overview.substring(0, 100) + "..." || "opis"}
               </Text>
             </Wrapper>
           </motion.div>

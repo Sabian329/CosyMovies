@@ -3,6 +3,7 @@ import { MovieItem } from "../MovieItem/Index";
 import { Wrapper } from "./Styled";
 import { useSelector } from "react-redux";
 import { selectSearch } from "../../Redux/selectors";
+import { LoadingWindow } from "../LoadingWindow/Index";
 
 export const SearchMovies = () => {
   const [apiData, setApiData] = useState([]);
@@ -16,20 +17,27 @@ export const SearchMovies = () => {
       .then(
         (result) => {
           setApiData({ ...result });
-          console.log(apiData);
-          console.log(searchState.currentValue);
+          console.log(apiData.length);
         },
         (error) => {
           setErrors(error);
           console.log(errors);
         }
       );
-  }, []);
+  }, [searchState.currentValue]);
   return (
-    <Wrapper>
-      {apiData?.results?.map((item) => (
-        <MovieItem {...item} key={item.id} />
-      ))}
-    </Wrapper>
+    <>
+      {apiData.length === 0 ? (
+        <>
+          <LoadingWindow />
+        </>
+      ) : (
+        <Wrapper>
+          {apiData?.results?.map((item) => (
+            <MovieItem {...item} key={item.id} />
+          ))}
+        </Wrapper>
+      )}
+    </>
   );
 };

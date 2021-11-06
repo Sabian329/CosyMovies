@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
   background-color: ${Colors.mainTheme};
   display: flex;
   align-items: center;
+  height: max-content;
+
   input {
     color: #ffff;
     width: 10rem;
