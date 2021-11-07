@@ -6,10 +6,16 @@ export const Baselink = {
   tv: "tv",
   popular: "popular",
   top: "top_rated",
-  trending: "trending",
+  trending: "trending/",
   day: "day",
   week: "week",
   upcomming: "upcoming",
+  all: "all/",
 };
 
-
+export const SectionNames = {
+  popular: "Popular",
+  top_rated: "Top rated",
+  upcoming: "Upcoming",
+  week: "Trending",
+};

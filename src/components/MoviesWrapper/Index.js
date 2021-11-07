@@ -10,11 +10,11 @@ import {
 } from "./Styled";
 import { Heading } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
-import { Baselink } from "../../Constatns/Api.js";
+import { Baselink, SectionNames } from "../../Constatns/Api.js";
 import { Pagination } from "../Pagination/Index";
 import { Colors } from "../../Theme/Colors";
 
-export const MoviesWrapper = ({ option }) => {
+export const MoviesWrapper = ({ option, noBtn, trending }) => {
   const [apiData, setApiData] = useState([]);
   const [errors, setErrors] = useState(false);
   const [pageNum, setPageNum] = useState(1);
@@ -29,7 +29,9 @@ export const MoviesWrapper = ({ option }) => {
 
   useEffect(() => {
     fetch(
-      `${Baselink.base}${DisplayOption()}/${option}${Baselink.key}page=
+      `${Baselink.base}${trending || ""}${DisplayOption()}/${option}${
+        Baselink.key
+      }page=
       ${pageNum}`
     )
       .then((res) => res.json())
@@ -50,20 +52,21 @@ export const MoviesWrapper = ({ option }) => {
       <NameBtnWrapper>
         <NameBtn>
           <Heading color="white" padding="1rem" fontWeight="light">
-            {option.charAt(0).toUpperCase() + option.slice(1)}
+            {SectionNames[option]}
           </Heading>
-
-          <Button
-            w="5rem"
-            bg={Colors.mainTheme1}
-            fontWeight="medium"
-            color={Colors.red}
-            onClick={() => {
-              ResetPageAndSetOption();
-            }}
-          >
-            {DisplayOption()}
-          </Button>
+          {!noBtn && (
+            <Button
+              w="5rem"
+              bg={Colors.mainTheme1}
+              fontWeight="medium"
+              color={Colors.red}
+              onClick={() => {
+                ResetPageAndSetOption();
+              }}
+            >
+              {DisplayOption()}
+            </Button>
+          )}
         </NameBtn>
         <ButtonWrapper>
           <Pagination setPageNum={setPageNum} pageNum={pageNum} />

@@ -1,9 +1,13 @@
+import { Heading } from "@chakra-ui/layout";
 import React from "react";
+import clap from "../../Asets/clap.png";
+import { Wrapper } from "./Styled";
 
 export const LoadingWindow = () => {
   return (
-    <div>
-      <div>is Loading</div>
-    </div>
+    <Wrapper>
+      <img src={clap} alt="Loading" />
+      <Heading mt="3rem">Loading</Heading>
+    </Wrapper>
   );
 };

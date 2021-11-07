@@ -17,5 +17,5 @@ export const Sizing = {
 
 export const Margins = {
   Box: "1rem",
-  MobileBox: "0 0.3rem 0 0.3rem",
+  MobileBox: "0.8rem",
 };

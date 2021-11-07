@@ -23,7 +23,7 @@ export const ActiveMovie = ({
         {original_name || original_title}
       </Heading>
       <OverviewWrapper>
-        <Text>{overview}</Text>
+        <Text>{overview || "Sorry, there is no description."}</Text>
       </OverviewWrapper>
       <MoviePoster
         src={`${

@@ -1,10 +1,5 @@
 import { Button } from "@chakra-ui/button";
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
 import { CenterBtns, Wrapper } from "./Styled";
 import { useWindowSize } from "../../Hooks/useWindowSize";

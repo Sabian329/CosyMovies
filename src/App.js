@@ -9,6 +9,7 @@ import { SearchMovies } from "./components/SchearchMovies/Index";
 
 function App() {
   const searchState = useSelector(selectSearch);
+  const noBtn = true;
 
   return (
     <ChakraProvider>
@@ -19,7 +20,8 @@ function App() {
         <>
           <MoviesWrapper option={Baselink.popular} />
           <MoviesWrapper option={Baselink.top} />
-          <MoviesWrapper option={Baselink.upcomming} />
+          <MoviesWrapper trending={Baselink.trending} option={Baselink.week} />
+          <MoviesWrapper option={Baselink.upcomming} noBtn={noBtn} />
         </>
       )}
     </ChakraProvider>

@@ -67,6 +67,9 @@ export const NameBtn = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
+  @media ${device.tablet} {
+    position: unset;
+  }
 `;
 export const NameBtnWrapper = styled.div`
   display: flex;
@@ -75,4 +78,10 @@ export const NameBtnWrapper = styled.div`
   position: relative;
   height: 5rem;
   width: 100%;
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 7rem;
+  }
 `;

@@ -17,7 +17,7 @@ export const SearchMovies = () => {
       .then(
         (result) => {
           setApiData({ ...result });
-          console.log(apiData.length);
+          console.log(apiData.results);
         },
         (error) => {
           setErrors(error);
