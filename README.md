@@ -4,8 +4,6 @@
 
 you can run this project by:
 
-###`https://cosymovies.netlify.app/`
-
 ### `npm start`
 
 ### `npm run build`
