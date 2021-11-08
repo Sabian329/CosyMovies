@@ -6,6 +6,9 @@ import { Margins } from "../../Theme/Sizing";
 
 export const MainWrapper = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
 `;
 
 export const Wrapper = styled.div`

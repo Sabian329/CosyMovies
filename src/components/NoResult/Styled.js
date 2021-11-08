@@ -19,7 +19,6 @@ export const Wrapper = styled.section`
 export const ImageWrapper = styled.div`
   width: 20rem;
   height: 30rem;
-
   background-image: url(${projector});
   background-size: contain;
   background-repeat: no-repeat;

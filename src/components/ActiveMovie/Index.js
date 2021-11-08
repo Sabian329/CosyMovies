@@ -2,13 +2,14 @@ import { Heading, Text } from "@chakra-ui/layout";
 import React from "react";
 import { MoviePoster, OverviewWrapper, Wrapper } from "./Styled";
 import { imageBase } from "../../Constatns/ImageBase";
-import moviePicture from "../../Asets/moviePoster.jpg";
+import clap from "../../Asets/clap.png";
 
 export const ActiveMovie = ({
   original_title,
   original_name,
   overview,
   backdrop_path,
+  known_for,
 }) => {
   return (
     <Wrapper>
@@ -20,17 +21,19 @@ export const ActiveMovie = ({
         margin="1rem
         "
       >
-        {original_name || original_title}
+        {original_name || original_title || known_for[0].original_title}
       </Heading>
       <OverviewWrapper>
         <Text>{overview || "Sorry, there is no description."}</Text>
       </OverviewWrapper>
-      <MoviePoster
-        src={`${
-          backdrop_path === null ? moviePicture : imageBase + backdrop_path
-        }`}
-        alt="moviePoster"
-      />
+      {backdrop_path === undefined ? (
+        <MoviePoster src={clap} alt="nophpto" />
+      ) : (
+        <MoviePoster
+          src={`${backdrop_path === null ? clap : imageBase + backdrop_path}`}
+          alt="film"
+        />
+      )}
     </Wrapper>
   );
 };

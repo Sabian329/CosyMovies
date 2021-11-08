@@ -9,7 +9,7 @@ import {
 import { motion } from "framer-motion";
 import { ActiveMovie } from "../ActiveMovie/Index";
 import { AnimatePresence } from "framer-motion";
-import projector from "../../Asets/projector.png";
+import projector from "../../Asets/projector3.png";
 
 const variants = {
   open: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -29,6 +29,7 @@ export const MovieItem = ({
   original_name,
   backdrop_path,
   first_air_date,
+  known_for,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [isActive, setIsActive] = useState(false);
@@ -49,23 +50,31 @@ export const MovieItem = ({
         >
           <motion.div animate={isOpen ? "open" : "closed"} variants={variants}>
             <Wrapper>
-              <img
-                src={`${
-                  poster_path === null ? projector : imageBase + poster_path
-                }`}
-                alt="film"
-              />
-              <CircularProgressWrapper>
-                <CircularProgress
-                  thickness="12px"
-                  value={vote_average * 10}
-                  color="red"
-                >
-                  <CircularProgressLabel color="white" fontSize="xs">
-                    {vote_average}
-                  </CircularProgressLabel>
-                </CircularProgress>
-              </CircularProgressWrapper>
+              {poster_path === undefined ? (
+                <img src={projector} alt="nophpto" />
+              ) : (
+                <img
+                  src={`${
+                    poster_path === null ? projector : imageBase + poster_path
+                  }`}
+                  alt="film"
+                />
+              )}
+
+              {vote_average && (
+                <CircularProgressWrapper>
+                  <CircularProgress
+                    thickness="12px"
+                    value={vote_average * 10}
+                    color="red"
+                  >
+                    <CircularProgressLabel color="white" fontSize="xs">
+                      {vote_average}
+                    </CircularProgressLabel>
+                  </CircularProgress>
+                </CircularProgressWrapper>
+              )}
+
               <Text color="wheat" fontSize="xs" marginLeft="1rem">{`Release ${
                 release_date || first_air_date
               }`}</Text>
@@ -75,7 +84,10 @@ export const MovieItem = ({
                 color="white"
                 padding="1rem"
               >
-                {overview?.substring(0, 100) + "..." || "opis"}
+                {" "}
+                {overview !== undefined
+                  ? overview?.substring(0, 100) + "..." || "opis"
+                  : "Sorry, there is no description."}
               </Text>
             </Wrapper>
           </motion.div>
@@ -86,6 +98,7 @@ export const MovieItem = ({
               original_name={original_name}
               overview={overview}
               backdrop_path={backdrop_path}
+              known_for={known_for}
             />
           </motion.div>
         </motion.div>

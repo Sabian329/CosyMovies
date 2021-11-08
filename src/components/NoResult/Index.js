@@ -1,6 +1,5 @@
 import React from "react";
 import { ImageWrapper, Wrapper } from "./Styled";
-import projector from "../../Asets/projector3.png";
 import { Heading } from "@chakra-ui/layout";
 
 export const NoResults = () => (
@@ -11,8 +10,6 @@ export const NoResults = () => (
     <Heading color="white" fontWeight="light">
       Sorry, no results found
     </Heading>
-    <ImageWrapper>
-      <div></div>
-    </ImageWrapper>
+    <ImageWrapper />
   </Wrapper>
 );

@@ -13,12 +13,15 @@ import { Button } from "@chakra-ui/button";
 import { Baselink, SectionNames } from "../../Constatns/Api.js";
 import { Pagination } from "../Pagination/Index";
 import { Colors } from "../../Theme/Colors";
+import { useWindowSize } from "../../Hooks/useWindowSize";
 
 export const MoviesWrapper = ({ option, noBtn, trending }) => {
   const [apiData, setApiData] = useState([]);
   const [errors, setErrors] = useState(false);
   const [pageNum, setPageNum] = useState(1);
   const [isMovieOrTv, setIsMovieOrTv] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  const size = useWindowSize();
 
   const DisplayOption = () => (isMovieOrTv ? Baselink.movie : Baselink.tv);
   const ResetPageAndSetOption = () => {
@@ -26,6 +29,9 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
     setIsMovieOrTv(!isMovieOrTv);
     setPageNum(1);
   };
+  useEffect(() => {
+    size.width >= 768 ? setIsMobile(false) : setIsMobile(true);
+  }, [size]);
 
   useEffect(() => {
     fetch(
@@ -42,7 +48,6 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
         },
         (error) => {
           setErrors(error);
-          console.log(errors);
         }
       );
   }, [pageNum, DisplayOption(), option]);
@@ -68,9 +73,11 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
             </Button>
           )}
         </NameBtn>
-        <ButtonWrapper>
-          <Pagination setPageNum={setPageNum} pageNum={pageNum} />
-        </ButtonWrapper>
+        {!isMobile && (
+          <ButtonWrapper>
+            <Pagination setPageNum={setPageNum} pageNum={pageNum} />
+          </ButtonWrapper>
+        )}
       </NameBtnWrapper>
       <ScrollWrapper>
         <Wrapper>

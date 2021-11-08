@@ -7,7 +7,6 @@ export const MainWrapper = styled.section`
   flex-direction: column;
   background-color: ${Colors.mainTheme};
   overflow: hidden;
-
   @media ${device.tablet} {
     align-items: center;
   }
@@ -64,12 +63,13 @@ export const ButtonWrapper = styled.div`
 export const NameBtn = styled.div`
   display: flex;
   align-items: center;
-
   position: absolute;
   bottom: 0;
   left: 0;
   @media ${device.tablet} {
     position: unset;
+    height: 4rem;
+    padding-top: 0.5rem;
   }
 `;
 export const NameBtnWrapper = styled.div`
@@ -80,9 +80,6 @@ export const NameBtnWrapper = styled.div`
   height: 5rem;
   width: 100%;
   @media ${device.tablet} {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    height: 7rem;
+    height: 4rem;
   }
 `;

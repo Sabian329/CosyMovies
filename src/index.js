@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import Root from "./Root";
 import reportWebVitals from "./reportWebVitals";
 import { ColorModeScript } from "@chakra-ui/react";
 import theme from "./Theme/theme.js";
@@ -12,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <App />
+      <Root />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

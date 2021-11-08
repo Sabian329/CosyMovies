@@ -7,11 +7,11 @@ export const Sizing = {
   //asdasdas
   //asdasd
   //sadssadas
-  mobileBoxHeight: " 30rem",
-  mobileBoxWidth: "15rem",
-  mobileImageHeight: "22rem",
+  mobileBoxHeight: " 27rem",
+  mobileBoxWidth: "14rem",
+  mobileImageHeight: "20rem",
   mobileSmallImageHeight: "9rem",
-  mobileScrollBoxWrapperHeight: "35rem",
+  mobileScrollBoxWrapperHeight: "30rem",
   mobileoverviewHeight: "16.4rem",
 };
 

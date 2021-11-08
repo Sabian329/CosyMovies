@@ -35,9 +35,9 @@ export const SearchMovies = () => {
       ) : (
         <Wrapper>
           {apiData.results.length ? (
-            apiData?.results?.map((item) => (
-              <MovieItem {...item} key={item.id} />
-            ))
+            apiData?.results
+              ?.filter((item) => item.known_for === undefined)
+              .map((item) => <MovieItem {...item} key={item.id} />)
           ) : (
             <NoResults />
           )}
