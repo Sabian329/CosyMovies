@@ -6,6 +6,8 @@ import { Baselink } from "./Constatns/Api";
 import { Search } from "./components/Search/Index";
 import { selectSearch } from "./Redux/selectors";
 import { SearchMovies } from "./components/SchearchMovies/Index";
+import { Logo } from "./components/Logo/Index";
+import { Header } from "./components/Header/Index";
 
 function App() {
   const searchState = useSelector(selectSearch);
@@ -13,7 +15,7 @@ function App() {
 
   return (
     <ChakraProvider>
-      <Search />
+      <Header />
       {searchState.isOpen ? (
         <SearchMovies />
       ) : (

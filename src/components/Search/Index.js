@@ -24,39 +24,35 @@ export const Search = () => {
 
   const startSearching = () => {
     dispatch(updateCurrentValue(inputValue));
-    dispatch(openSearch());
+    inputValue && dispatch(openSearch());
+  };
+  const closeAndResetInput = () => {
+    dispatch(closeSearch());
+    setInputValue("");
   };
   useEffect(() => {
     !searchState.currentValue && dispatch(closeSearch());
   }, [searchState.currentValue]);
-  useEffect(() => {
-    const listener = (event) => {
-      event.code === "Enter" && startSearching();
-    };
-    document.addEventListener("keydown", listener);
-    return () => {
-      document.removeEventListener("keydown", listener);
-    };
-  }, []);
 
   return (
     <Wrapper>
       <Stack spacing={3} bg={Colors.mainTheme}>
-        <Input
-          variant="outline"
-          bg={Colors.mainTheme1}
+        <input
+          type="text"
+          // variant="outline"
+          // bg={Colors.mainTheme1}
           placeholder="Search Movie"
-          size="md"
+          // size="md"
           onChange={(e) => inputHandle(e)}
         />
       </Stack>
-      <Button onClick={() => startSearching()}>
+      <button onClick={() => startSearching()}>
         <SearchIcon w={5} h={5} color="red" />
-      </Button>
+      </button>
       {searchState.isOpen && (
-        <Button onClick={() => dispatch(closeSearch())}>
-          <CloseIcon />
-        </Button>
+        <button onClick={() => closeAndResetInput()}>
+          <CloseIcon color={Colors.mainTheme1} />
+        </button>
       )}
     </Wrapper>
   );

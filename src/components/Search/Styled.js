@@ -1,23 +1,44 @@
 import styled from "styled-components";
 import { Colors } from "../../Theme/Colors";
 import { device } from "../../Theme/MediaQueries";
+import { InputSize } from "../../Theme/Sizing";
 
 export const Wrapper = styled.div`
   background-color: ${Colors.mainTheme};
   display: flex;
   align-items: center;
   height: max-content;
+  padding: ${InputSize.paddingWrapper};
+  margin-left: 1rem;
+  border-radius: 10px;
   @media ${device.tablet} {
+    padding: ${InputSize.paddingWrapperMobile};
+    margin: 0;
+    width: 90vw;
     justify-content: center;
-    padding: 1rem 0 2rem 0;
+    max-width: 300px;
+    overflow: hidden;
   }
 
   input {
+    border: none;
+    background: transparent;
     color: #ffff;
-    width: 10rem;
+    :focus {
+      outline: none;
+    }
+    @media ${device.tablet} {
+      font-size: 1.2rem;
+      width: 80vw;
+      max-width: 200px;
+    }
   }
   button {
-    background-color: ${Colors.mainTheme1};
+    background: transparent;
+    margin: ${InputSize.marginBtn};
+    padding: ${InputSize.paddingBtn};
+    @media ${device.tablet} {
+    }
   }
 `;
 export const IconWrapper = styled.div`

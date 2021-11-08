@@ -4,6 +4,7 @@ import { Wrapper } from "./Styled";
 import { useSelector } from "react-redux";
 import { selectSearch } from "../../Redux/selectors";
 import { LoadingWindow } from "../LoadingWindow/Index";
+import { NoResults } from "../NoResult/Index";
 
 export const SearchMovies = () => {
   const [apiData, setApiData] = useState([]);
@@ -33,9 +34,13 @@ export const SearchMovies = () => {
         </>
       ) : (
         <Wrapper>
-          {apiData?.results?.map((item) => (
-            <MovieItem {...item} key={item.id} />
-          ))}
+          {apiData.results.length ? (
+            apiData?.results?.map((item) => (
+              <MovieItem {...item} key={item.id} />
+            ))
+          ) : (
+            <NoResults />
+          )}
         </Wrapper>
       )}
     </>

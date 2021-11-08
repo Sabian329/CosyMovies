@@ -6,6 +6,7 @@ export const MainWrapper = styled.section`
   display: flex;
   flex-direction: column;
   background-color: ${Colors.mainTheme};
+  overflow: hidden;
 
   @media ${device.tablet} {
     align-items: center;
