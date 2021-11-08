@@ -10,4 +10,7 @@ export const Wrapper = styled.section`
   padding-bottom: 10rem;
   height: max-content;
   min-height: 100vh;
+  div {
+    cursor: pointer;
+  }
 `;

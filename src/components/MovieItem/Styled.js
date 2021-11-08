@@ -22,6 +22,7 @@ export const Wrapper = styled.div`
   height: ${Sizing.mainBoxHeight};
   width: ${Sizing.mainBoxWidth};
   margin: ${Margins.Box};
+
   -webkit-box-shadow: 5px 5px 20px ${Colors.shadow};
   box-shadow: 5px 5px 20px ${Colors.shadow};
   overflow-y: hidden;
@@ -34,6 +35,7 @@ export const Wrapper = styled.div`
     border-radius: 15px 15px 0 0;
     height: ${Sizing.mainImageHeight};
     width: ${Sizing.mainBoxWidth};
+
     -webkit-mask-image: -webkit-gradient(
       linear,
       left top,
