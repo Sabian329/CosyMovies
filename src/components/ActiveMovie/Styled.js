@@ -46,6 +46,9 @@ export const MoviePoster = styled.img`
 `;
 
 export const OverviewWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: ${Sizing.overviewHeight};
   overflow-y: scroll;
 
@@ -67,5 +70,11 @@ export const OverviewWrapper = styled.div`
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000;
+  }
+  button {
+    background-color: ${Colors.mainTheme};
+    width: 40%;
+    height: 2rem;
+    color: wheat;
   }
 `;

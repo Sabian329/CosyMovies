@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { ActiveMovie } from "../ActiveMovie/Index";
 import { AnimatePresence } from "framer-motion";
 import projector from "../../Asets/projector3.png";
+import { Modal } from "../Modal/Index";
 
 const variants = {
   open: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -30,13 +31,13 @@ export const MovieItem = ({
   backdrop_path,
   first_air_date,
   known_for,
+  id,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const [isActive, setIsActive] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const opener = () => {
     setIsOpen(!isOpen);
-    setIsActive(!isActive);
   };
 
   return (
@@ -99,10 +100,21 @@ export const MovieItem = ({
               overview={overview}
               backdrop_path={backdrop_path}
               known_for={known_for}
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
             />
           </motion.div>
         </motion.div>
       </AnimatePresence>
+      {isModalOpen && (
+        <Modal
+          movie_id={id}
+          setIsOpen={setIsOpen}
+          isOpen={isOpen}
+          setIsModalOpen={setIsModalOpen}
+          isModalOpen={isModalOpen}
+        />
+      )}
     </MainWrapper>
   );
 };
