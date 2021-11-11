@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
   position: fixed;
   border-radius: 26px;
   z-index: 100;
-  overflow: scroll;
+  overflow-y: scroll;
   @media only screen and (max-width: 550px) {
     width: 65vw;
     height: 65vh;
