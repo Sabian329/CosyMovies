@@ -8,15 +8,22 @@ import { selectSearch } from "./Redux/selectors";
 import { SearchMovies } from "./components/SchearchMovies/Index";
 import { Header } from "./components/Header/Index";
 import { Modal } from "./components/Modal/Index";
+import { Favourites } from "./components/FavouritesWrapper/Index";
 
 function App() {
+  const [favouritesOpen, setFavouritesOpen] = useState(false);
   const searchState = useSelector(selectSearch);
   const noBtn = true;
 
   return (
     <ChakraProvider>
-      <Header />
-      {searchState.isOpen ? (
+      <Header
+        favouritesOpen={favouritesOpen}
+        setFavouritesOpen={setFavouritesOpen}
+      />
+      {favouritesOpen ? (
+        <Favourites />
+      ) : searchState.isOpen ? (
         <SearchMovies />
       ) : (
         <>

@@ -71,10 +71,25 @@ export const OverviewWrapper = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000;
   }
+`;
+export const Buttons = styled.div`
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  z-index: 100;
+  overflow: hidden;
+  border-radius: 0 0 26px 26px;
+  width: 100%;
+
   button {
-    background-color: ${Colors.mainTheme};
-    width: 40%;
+    background-color: ${Colors.mainTheme1};
+    width: 10rem;
     height: 2rem;
     color: wheat;
+    border: none;
+    :hover {
+      background-color: ${Colors.mainTheme};
+    }
   }
 `;

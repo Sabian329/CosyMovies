@@ -11,8 +11,9 @@ export const MainWrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(5px);
   z-index: 1000;
+  cursor: pointer;
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ export const Wrapper = styled.div`
   position: fixed;
   border-radius: 26px;
   z-index: 100;
+  cursor: default;
   overflow: hidden;
   @media only screen and (max-width: 550px) {
     width: 65vw;

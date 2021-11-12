@@ -2,6 +2,7 @@ import { Heading, Link } from "@chakra-ui/layout";
 import React, { useEffect, useState } from "react";
 import { imageBase } from "../../Constatns/ImageBase";
 import movieStar from "../../Asets/moviestar.png";
+import { NoResults } from "../NoResult/Index";
 import {
   People,
   PersonCharacter,
@@ -28,7 +29,7 @@ export const ModalContent = ({
       .then(
         (result) => {
           setApiData({ ...result });
-          console.log(`moodal ${apiData}`);
+          console.log(apiData.cast);
         },
         (error) => {
           setErrors(error);
@@ -42,22 +43,28 @@ export const ModalContent = ({
         {`Creids of ${original_name || original_title}`}
       </Heading>
       <PersonWrapper>
-        {apiData?.cast?.map((person) => (
-          <People>
-            <PesronImage
-              src={
-                person.profile_path === null
-                  ? movieStar
-                  : imageBase + person.profile_path
-              }
-              alt="company logo"
-            />
-            <PersonName>{person.name}</PersonName>
-            <PersonCharacter>{person.character}</PersonCharacter>
-            <PersonRole>{person.known_for_department}</PersonRole>
-          </People>
-        ))}
+        {!apiData?.cast?.length ? (
+          <NoResults />
+        ) : (
+          apiData?.cast
+            ?.filter((item) => item.known_for_department === "Acting")
+            .map((person) => (
+              <People>
+                <PesronImage
+                  src={
+                    person.profile_path === null
+                      ? movieStar
+                      : imageBase + person.profile_path
+                  }
+                  alt="company logo"
+                />
+                <PersonName>{person.name}</PersonName>
+                <PersonCharacter>{person.character}</PersonCharacter>
+              </People>
+            ))
+        )}
       </PersonWrapper>
     </Wrapper>
   );
 };
+// ?.filter((item) => item.known_for_department === "Acting")

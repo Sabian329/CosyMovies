@@ -102,6 +102,7 @@ export const MovieItem = ({
               known_for={known_for}
               isModalOpen={isModalOpen}
               setIsModalOpen={setIsModalOpen}
+              id={id}
             />
           </motion.div>
         </motion.div>

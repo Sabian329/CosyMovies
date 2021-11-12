@@ -3,7 +3,7 @@ import { Colors } from "../../Theme/Colors";
 import { device } from "../../Theme/MediaQueries";
 import { InputSize } from "../../Theme/Sizing";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   background-color: ${Colors.mainTheme};
   display: flex;
   align-items: center;
@@ -35,8 +35,12 @@ export const Wrapper = styled.div`
   }
   button {
     background: transparent;
+    color: ${Colors.modalTheme2};
     margin: ${InputSize.marginBtn};
     padding: ${InputSize.paddingBtn};
+    :hover {
+      color: red;
+    }
     @media ${device.tablet} {
     }
   }

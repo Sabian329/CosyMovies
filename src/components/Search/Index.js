@@ -12,7 +12,7 @@ import {
 } from "../../Redux/slices/searchSlice";
 import { selectSearch } from "../../Redux/selectors";
 
-export const Search = () => {
+export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
   const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
   const searchState = useSelector(selectSearch);
@@ -46,6 +46,9 @@ export const Search = () => {
           <CloseIcon color={Colors.mainTheme1} />
         </button>
       )}
+      <button onClick={() => setFavouritesOpen(!favouritesOpen)}>
+        Favourites
+      </button>
     </Wrapper>
   );
 };
