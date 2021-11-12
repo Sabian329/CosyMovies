@@ -4,7 +4,14 @@ import { motion } from "framer-motion";
 import { MainWrapper, Wrapper } from "./Styled";
 import { ModalContent } from "../ModalContent/Index";
 
-export const Modal = ({ setIsModalOpen, movie_id, setIsOpen, isOpen }) => {
+export const Modal = ({
+  setIsModalOpen,
+  movie_id,
+  setIsOpen,
+  isOpen,
+  original_title,
+  original_name,
+}) => {
   const CloseModalAndActive = () => {
     setIsModalOpen(false);
     setIsOpen(!isOpen);
@@ -18,7 +25,12 @@ export const Modal = ({ setIsModalOpen, movie_id, setIsOpen, isOpen }) => {
         }}
       >
         <Wrapper onClick={(proxy) => proxy.stopPropagation()}>
-          <ModalContent isOpen={isOpen} movie_id={movie_id} />
+          <ModalContent
+            isOpen={isOpen}
+            movie_id={movie_id}
+            original_title={original_title}
+            original_name={original_name}
+          />
         </Wrapper>
       </motion.div>
     </MainWrapper>

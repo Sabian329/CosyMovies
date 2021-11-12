@@ -33,7 +33,7 @@ export const ActiveMovie = ({
         </Heading>
         <OverviewWrapper>
           <Text>{overview || "Sorry, there is no description."}</Text>
-          <Button onClick={(proxy) => OpenModal(proxy)}>more</Button>
+          <Button onClick={(proxy) => OpenModal(proxy)}>creids</Button>
         </OverviewWrapper>
 
         {backdrop_path === undefined ? (

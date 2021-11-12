@@ -113,6 +113,8 @@ export const MovieItem = ({
           isOpen={isOpen}
           setIsModalOpen={setIsModalOpen}
           isModalOpen={isModalOpen}
+          original_title={original_title}
+          original_name={original_name}
         />
       )}
     </MainWrapper>

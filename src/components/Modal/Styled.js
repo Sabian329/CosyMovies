@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+
   top: 50vh;
   transform: translateY(-50%);
   left: 0;
@@ -26,11 +26,11 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   width: 50vw;
   height: 80vh;
-  background-color: ${Colors.mainTheme1};
+  background-color: ${Colors.modalTheme};
   position: fixed;
   border-radius: 26px;
   z-index: 100;
-  overflow-y: scroll;
+  overflow: hidden;
   @media only screen and (max-width: 550px) {
     width: 65vw;
     height: 65vh;
