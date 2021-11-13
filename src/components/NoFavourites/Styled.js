@@ -7,7 +7,6 @@ export const Wrapper = styled.section`
   align-items: center;
   flex-direction: column;
   font-size: 5rem;
-
   img {
     display: block;
     width: 300px;

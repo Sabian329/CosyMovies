@@ -3,7 +3,9 @@ import { Colors } from "../../Theme/Colors";
 
 export const Wrapper = styled.section`
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
   background-color: ${Colors.mainTheme};
-  height: 100vh;
+  overflow: hidden;
+  min-height: 100vh;
 `;

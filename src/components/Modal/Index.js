@@ -11,6 +11,8 @@ export const Modal = ({
   isOpen,
   original_title,
   original_name,
+  DisplayOption,
+  media_type,
 }) => {
   const CloseModalAndActive = () => {
     setIsModalOpen(false);
@@ -30,6 +32,8 @@ export const Modal = ({
             movie_id={movie_id}
             original_title={original_title}
             original_name={original_name}
+            DisplayOption={DisplayOption}
+            media_type={media_type}
           />
         </Wrapper>
       </motion.div>

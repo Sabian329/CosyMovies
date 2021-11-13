@@ -31,6 +31,8 @@ export const MovieItem = ({
   backdrop_path,
   first_air_date,
   known_for,
+  media_type,
+  DisplayOption,
   id,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -103,6 +105,8 @@ export const MovieItem = ({
               isModalOpen={isModalOpen}
               setIsModalOpen={setIsModalOpen}
               id={id}
+              media_type={media_type}
+              DisplayOption={DisplayOption}
             />
           </motion.div>
         </motion.div>
@@ -116,6 +120,8 @@ export const MovieItem = ({
           isModalOpen={isModalOpen}
           original_title={original_title}
           original_name={original_name}
+          media_type={media_type}
+          DisplayOption={DisplayOption}
         />
       )}
     </MainWrapper>

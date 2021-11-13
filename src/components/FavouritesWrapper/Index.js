@@ -14,7 +14,12 @@ export const Favourites = () => {
     <Wrapper>
       {favouritesState.favList.length ? (
         favouritesState.favList.map((item, index, arr) => (
-          <FavouritesItem id={item} arr={arr} index={index} />
+          <FavouritesItem
+            media_type={item.media_type}
+            id={item.id}
+            arr={arr}
+            index={index}
+          />
         ))
       ) : (
         <NoFavourites />

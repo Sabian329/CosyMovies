@@ -6,13 +6,17 @@ import clap from "../../Asets/clap.png";
 import { useDispatch, useSelector } from "react-redux";
 import { selectaddToFavourites } from "../../Redux/selectors";
 import { addItem, deleteItem } from "../../Redux/slices/addToFavSlice";
+import { motion } from "framer-motion";
 import { StarIcon } from "@chakra-ui/icons";
+import { Modal } from "../Modal/Index";
 export const ActiveMovie = ({
   original_title,
   original_name,
   overview,
   backdrop_path,
   setIsModalOpen,
+  media_type,
+  DisplayOption,
   id,
 }) => {
   const dispatch = useDispatch();
@@ -25,14 +29,15 @@ export const ActiveMovie = ({
   };
 
   useEffect(() => {
-    favouritesState.favList.includes(id)
+    favouritesState.favList.filter((item) => item.id === id).length
       ? setIsInFavourites(true)
       : setIsInFavourites(false);
   }, [favouritesState]);
 
-  const addAndCheck = () => {
-    !favouritesState.favList.includes(id)
-      ? dispatch(addItem(id))
+  const addAndCheck = (proxy) => {
+    proxy.stopPropagation();
+    !favouritesState.favList.filter((item) => item.id === id).length
+      ? dispatch(addItem({ media_type: media_type || DisplayOption(), id: id }))
       : dispatch(deleteItem(id));
   };
 
@@ -51,9 +56,14 @@ export const ActiveMovie = ({
         <OverviewWrapper>
           <Text>{overview || "Sorry, there is no description."}</Text>
           <Buttons>
-            <button onClick={(proxy) => OpenModal(proxy)}>creids</button>
-            <button onClick={() => addAndCheck()}>
-              <StarIcon color={isInFavourites ? "red" : "wheat"} />
+            <button onClick={(proxy) => OpenModal(proxy)}>cast</button>
+            <button onClick={(proxy) => addAndCheck(proxy)}>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <StarIcon color={isInFavourites ? "red" : "wheat"} />
+              </motion.button>
             </button>
           </Buttons>
         </OverviewWrapper>

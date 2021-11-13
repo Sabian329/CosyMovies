@@ -27,6 +27,7 @@ export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
   };
   const closeAndResetInput = () => {
     dispatch(closeSearch());
+    setFavouritesOpen(false);
   };
 
   return (

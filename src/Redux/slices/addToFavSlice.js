@@ -7,7 +7,9 @@ export const addToFavSlice = createSlice({
       state.favList = [...state.favList, action.payload];
     },
     deleteItem(state, action) {
-      state.favList = state.favList.filter((items) => items !== action.payload);
+      state.favList = state.favList.filter(
+        (items) => items.id !== action.payload
+      );
     },
   },
 });

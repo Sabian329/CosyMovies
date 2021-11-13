@@ -82,7 +82,7 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
       <ScrollWrapper>
         <Wrapper>
           {apiData?.results?.map((item) => (
-            <MovieItem {...item} key={item.id} />
+            <MovieItem {...item} key={item.id} DisplayOption={DisplayOption} />
           ))}
         </Wrapper>
       </ScrollWrapper>

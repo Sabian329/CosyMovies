@@ -11,6 +11,9 @@ export const Wrapper = styled.section`
   padding: ${InputSize.paddingWrapper};
   margin-left: 1rem;
   border-radius: 10px;
+  p {
+    color: wheat;
+  }
   @media ${device.tablet} {
     padding: ${InputSize.paddingWrapperMobile};
     margin: 0;

@@ -7,7 +7,6 @@ import {
   People,
   PersonCharacter,
   PersonName,
-  PersonRole,
   PersonWrapper,
   PesronImage,
   Wrapper,
@@ -18,12 +17,16 @@ export const ModalContent = ({
   isOpen,
   original_name,
   original_title,
+  DisplayOption,
+  media_type,
 }) => {
   const [apiData, setApiData] = useState([]);
   const [errors, setErrors] = useState(false);
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=6470b291b6975b86666f1d6afd74d966&language=en-US`
+      `https://api.themoviedb.org/3/${
+        media_type || DisplayOption()
+      }/${movie_id}/credits?api_key=6470b291b6975b86666f1d6afd74d966&language=en-US`
     )
       .then((res) => res.json())
       .then(
@@ -40,7 +43,7 @@ export const ModalContent = ({
   return (
     <Wrapper>
       <Heading padding="0.5rem" color="wheat" fontWeight="light">
-        {`Creids of ${original_name || original_title}`}
+        {`Cast of ${original_name || original_title}`}
       </Heading>
       <PersonWrapper>
         {!apiData?.cast?.length ? (
