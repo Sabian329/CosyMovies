@@ -14,6 +14,8 @@ import { Baselink, SectionNames } from "../../Constatns/Api.js";
 import { Pagination } from "../Pagination/Index";
 import { Colors } from "../../Theme/Colors";
 import { useWindowSize } from "../../Hooks/useWindowSize";
+import { ScrollHorizon } from "../ScrollHorison/Index";
+import { useRef } from "react";
 
 export const MoviesWrapper = ({ option, noBtn, trending }) => {
   const [apiData, setApiData] = useState([]);
@@ -52,6 +54,12 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
       );
   }, [pageNum, DisplayOption(), option]);
 
+  const scrollInside = useRef(null);
+
+  const scrollHorisontal = (scrollOffset) => {
+    scrollInside.current.scrollLeft += scrollOffset;
+  };
+
   return (
     <MainWrapper>
       <NameBtnWrapper>
@@ -73,13 +81,9 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
             </Button>
           )}
         </NameBtn>
-        {!isMobile && (
-          <ButtonWrapper>
-            <Pagination setPageNum={setPageNum} pageNum={pageNum} />
-          </ButtonWrapper>
-        )}
+        <ScrollHorizon scrollHorisontal={scrollHorisontal} />
       </NameBtnWrapper>
-      <ScrollWrapper>
+      <ScrollWrapper ref={scrollInside}>
         <Wrapper>
           {apiData?.results?.map((item) => (
             <MovieItem {...item} key={item.id} DisplayOption={DisplayOption} />

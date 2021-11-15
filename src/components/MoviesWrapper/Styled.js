@@ -27,6 +27,7 @@ export const ScrollWrapper = styled.div`
   overflow-y: hidden;
   overflow-x: scroll;
   background-color: ${Colors.mainTheme};
+  scroll-behavior: smooth;
   @media ${device.tablet} {
     height: ${Sizing.mobileScrollBoxWrapperHeight};
   }
