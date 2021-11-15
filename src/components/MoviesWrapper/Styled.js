@@ -12,7 +12,7 @@ export const MainWrapper = styled.section`
   }
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.ul`
   display: flex;
   justify-content: center;
   width: max-content;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Stack } from "@chakra-ui/react";
+import { Stack, Heading } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { Colors } from "../../Theme/Colors";
 import { Wrapper } from "./Styled";
@@ -24,6 +24,7 @@ export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
   const startSearching = () => {
     dispatch(updateCurrentValue(inputValue));
     inputValue && dispatch(openSearch());
+    setFavouritesOpen(false);
   };
   const closeAndResetInput = () => {
     dispatch(closeSearch());
@@ -48,7 +49,13 @@ export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
         </button>
       )}
       <button onClick={() => setFavouritesOpen(!favouritesOpen)}>
-        Favourites
+        <Heading
+          fontSize="1rem"
+          fontWeight="medium"
+          color={favouritesOpen && "#ff0000"}
+        >
+          Favourites
+        </Heading>
       </button>
     </Wrapper>
   );

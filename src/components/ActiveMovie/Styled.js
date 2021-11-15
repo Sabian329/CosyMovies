@@ -91,5 +91,8 @@ export const Buttons = styled.div`
     :hover {
       background-color: ${Colors.mainTheme};
     }
+    @media ${device.tablet} {
+      width: 7rem;
+    }
   }
 `;

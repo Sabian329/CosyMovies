@@ -11,18 +11,12 @@ export const Wrapper = styled.section`
   padding: ${InputSize.paddingWrapper};
   margin-left: 1rem;
   border-radius: 10px;
-  p {
-    color: wheat;
-  }
+
   @media ${device.tablet} {
     padding: ${InputSize.paddingWrapperMobile};
-    margin: 0;
+    justify-content: space-between;
     width: 90vw;
-    justify-content: center;
-    max-width: 300px;
-    overflow: hidden;
   }
-
   input {
     border: none;
     background: transparent;
@@ -32,8 +26,7 @@ export const Wrapper = styled.section`
     }
     @media ${device.tablet} {
       font-size: 1.2rem;
-      width: 80vw;
-      max-width: 200px;
+      width: 8rem;
     }
   }
   button {
@@ -42,9 +35,10 @@ export const Wrapper = styled.section`
     margin: ${InputSize.marginBtn};
     padding: ${InputSize.paddingBtn};
     :hover {
-      color: red;
+      color: #ff0000;
     }
     @media ${device.tablet} {
+      margin: 0;
     }
   }
 `;

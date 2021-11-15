@@ -1,4 +1,4 @@
-import { Heading, Link } from "@chakra-ui/layout";
+import { Heading } from "@chakra-ui/layout";
 import React, { useEffect, useState } from "react";
 import { imageBase } from "../../Constatns/ImageBase";
 import movieStar from "../../Asets/moviestar.png";
@@ -45,6 +45,7 @@ export const ModalContent = ({
       <Heading padding="0.5rem" color="wheat" fontWeight="light">
         {`Cast of ${original_name || original_title}`}
       </Heading>
+
       <PersonWrapper>
         {!apiData?.cast?.length ? (
           <NoResults />

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "../../Theme/Colors";
+import { device } from "../../Theme/MediaQueries";
 
 export const MainWrapper = styled.div`
   padding: 01rem;
@@ -27,14 +27,14 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   width: 50vw;
   height: 80vh;
-  background-color: ${Colors.modalTheme};
+  background-color: black;
   position: fixed;
   border-radius: 26px;
   z-index: 100;
   cursor: default;
   overflow: hidden;
-  @media only screen and (max-width: 550px) {
-    width: 65vw;
-    height: 65vh;
+  @media ${device.tablet} {
+    width: 75vw;
+    height: 90vh;
   }
 `;

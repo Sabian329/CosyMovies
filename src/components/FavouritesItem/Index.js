@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { addItem } from "../../Redux/slices/addToFavSlice";
 import { MovieItem } from "../MovieItem/Index";
 
 export const FavouritesItem = ({ id, arr, media_type }) => {
@@ -22,21 +21,17 @@ export const FavouritesItem = ({ id, arr, media_type }) => {
       );
   }, [arr]);
   return (
-    <div>
-      <div>
-        <MovieItem
-          poster_path={apiData.poster_path}
-          overview={apiData.overview}
-          release_date={apiData.release_date}
-          vote_average={apiData.vote_average}
-          original_title={apiData.original_title}
-          original_name={apiData.original_name}
-          backdrop_path={apiData.backdrop_path}
-          first_air_date={apiData.first_air_date}
-          id={id}
-          media_type={media_type}
-        />
-      </div>
-    </div>
+    <MovieItem
+      poster_path={apiData.poster_path}
+      overview={apiData.overview}
+      release_date={apiData.release_date}
+      vote_average={apiData.vote_average}
+      original_title={apiData.original_title}
+      original_name={apiData.original_name}
+      backdrop_path={apiData.backdrop_path}
+      first_air_date={apiData.first_air_date}
+      id={id}
+      media_type={media_type}
+    />
   );
 };

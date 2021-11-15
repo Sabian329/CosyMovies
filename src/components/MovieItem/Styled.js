@@ -4,7 +4,7 @@ import { Sizing } from "../../Theme/Sizing";
 import { device } from "../../Theme/MediaQueries";
 import { Margins } from "../../Theme/Sizing";
 
-export const MainWrapper = styled.div`
+export const MainWrapper = styled.li`
   position: relative;
   display: flex;
   align-items: center;

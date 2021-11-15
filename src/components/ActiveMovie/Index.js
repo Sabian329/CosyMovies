@@ -8,7 +8,7 @@ import { selectaddToFavourites } from "../../Redux/selectors";
 import { addItem, deleteItem } from "../../Redux/slices/addToFavSlice";
 import { motion } from "framer-motion";
 import { StarIcon } from "@chakra-ui/icons";
-import { Modal } from "../Modal/Index";
+
 export const ActiveMovie = ({
   original_title,
   original_name,

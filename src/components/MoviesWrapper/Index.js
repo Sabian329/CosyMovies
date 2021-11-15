@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MovieItem } from "../MovieItem/Index";
 import {
-  ButtonWrapper,
   MainWrapper,
   NameBtn,
   NameBtnWrapper,
@@ -11,7 +10,6 @@ import {
 import { Heading } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { Baselink, SectionNames } from "../../Constatns/Api.js";
-import { Pagination } from "../Pagination/Index";
 import { Colors } from "../../Theme/Colors";
 import { useWindowSize } from "../../Hooks/useWindowSize";
 import { ScrollHorizon } from "../ScrollHorison/Index";
@@ -23,6 +21,7 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
   const [pageNum, setPageNum] = useState(1);
   const [isMovieOrTv, setIsMovieOrTv] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [isScrollMax, setIsScrollMax] = useState(false);
   const size = useWindowSize();
 
   const DisplayOption = () => (isMovieOrTv ? Baselink.movie : Baselink.tv);
@@ -58,6 +57,9 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
 
   const scrollHorisontal = (scrollOffset) => {
     scrollInside.current.scrollLeft += scrollOffset;
+    scrollInside.current.scrollLeft
+      ? setIsScrollMax(true)
+      : setIsScrollMax(false);
   };
 
   return (
@@ -81,7 +83,12 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
             </Button>
           )}
         </NameBtn>
-        <ScrollHorizon scrollHorisontal={scrollHorisontal} />
+        {!isMobile && (
+          <ScrollHorizon
+            isScrollMax={isScrollMax}
+            scrollHorisontal={scrollHorisontal}
+          />
+        )}
       </NameBtnWrapper>
       <ScrollWrapper ref={scrollInside}>
         <Wrapper>

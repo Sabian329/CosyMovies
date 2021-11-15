@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../Theme/Colors";
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

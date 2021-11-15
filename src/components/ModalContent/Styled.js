@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "../../Theme/Colors";
-import { Sizing } from "../../Theme/Sizing";
+import { device } from "../../Theme/MediaQueries";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,6 +8,15 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  h2 {
+    text-align: center;
+    margin: 1rem;
+  }
+  @media ${device.tablet} {
+    h2 {
+      font-size: 1rem;
+    }
+  }
 `;
 export const PersonWrapper = styled.div`
   height: 80vh;
@@ -26,8 +35,14 @@ export const People = styled.div`
   overflow: hidden;
   margin: 1rem;
   height: 29rem;
-  -webkit-box-shadow: 5px 5px 20px ${Colors.shadow2};
-  box-shadow: 5px 5px 20px ${Colors.shadow2};
+  border-bottom: 2px solid ${Colors.modalTheme};
+  @media ${device.tablet} {
+    height: max-content;
+
+    p {
+      max-width: 10rem;
+    }
+  }
 `;
 export const PersonName = styled.p`
   font-weight: 200;
@@ -43,14 +58,11 @@ export const PersonCharacter = styled.p`
   max-width: 15rem;
   padding: 0 1rem 0 1rem;
   text-align: center;
+  @media ${device.tablet} {
+    margin-bottom: 1rem;
+  }
 `;
-export const PersonRole = styled.p`
-  font-weight: 200;
-  color: #ffff;
-  max-width: 15rem;
-  padding: 0 1rem 0 1rem;
-  text-align: center;
-`;
+
 export const PesronImage = styled.img`
   width: 15rem;
   height: 22rem;
@@ -65,4 +77,9 @@ export const PesronImage = styled.img`
     color-stop(0.85, rgba(0, 0, 0, 0.6)),
     color-stop(1, rgba(0, 0, 0, 0))
   );
+  @media ${device.tablet} {
+    width: 13rem;
+    height: 20rem;
+    border-radius: 23px 23px 00;
+  }
 `;
