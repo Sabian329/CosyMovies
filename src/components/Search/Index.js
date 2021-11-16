@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Stack, Heading } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { Colors } from "../../Theme/Colors";
@@ -17,6 +17,8 @@ export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
   const dispatch = useDispatch();
   const searchState = useSelector(selectSearch);
 
+  const refInput = useRef(null);
+
   const inputHandle = (e) => {
     setInputValue(e.target.value);
   };
@@ -25,10 +27,24 @@ export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
     dispatch(updateCurrentValue(inputValue));
     inputValue && dispatch(openSearch());
     setFavouritesOpen(false);
+    refInput.current.value = "";
   };
+  useEffect(() => {
+    const listener = (event) => {
+      event.code === "Enter" && startSearching();
+      event.code === "Escape" && closeAndResetInput();
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, [inputValue]);
+
   const closeAndResetInput = () => {
     dispatch(closeSearch());
     setFavouritesOpen(false);
+    refInput.current.value = "";
+    setInputValue(null);
   };
 
   return (
@@ -37,10 +53,11 @@ export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
         <input
           type="text"
           placeholder="Search Movie"
+          ref={refInput}
           onChange={(e) => inputHandle(e)}
         />
       </Stack>
-      <button onClick={() => startSearching()}>
+      <button type="submit" value="Submit" onClick={() => startSearching()}>
         <SearchIcon w={5} h={5} color="red" />
       </button>
       {searchState.isOpen && (

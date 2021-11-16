@@ -3,7 +3,7 @@ import { Colors } from "../../Theme/Colors";
 import { device } from "../../Theme/MediaQueries";
 import { InputSize } from "../../Theme/Sizing";
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.nav`
   background-color: ${Colors.mainTheme};
   display: flex;
   align-items: center;
