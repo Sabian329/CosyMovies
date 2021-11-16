@@ -4,7 +4,8 @@ export const Colors = {
   modalTheme: "#5c5c5c",
   modalTheme2: "#757575",
   modalTheme3: "#5c4c4b",
-  red: "#FF0000",
-  shadow: "rgba(0, 0, 0, 0.5)",
+  body: "#141414",
+  red: "#d21404",
+  shadow: "rgba(0, 0, 0, 0.4)",
   shadow2: "rgba(0, 0, 0, 0.8)",
 };

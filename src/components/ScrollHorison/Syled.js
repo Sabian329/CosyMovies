@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Colors } from "../../Theme/Colors";
 
 export const BtnRight = styled.button`
   position: absolute;
@@ -10,10 +11,11 @@ export const BtnRight = styled.button`
   border-radius: 50%;
   margin: 1rem;
   backdrop-filter: blur(30px);
+  z-index: 1000;
 
   :hover {
     path {
-      color: red;
+      color: ${Colors.red};
     }
   }
 `;
@@ -27,10 +29,11 @@ export const BtnLeft = styled.button`
   border-radius: 50%;
   margin: 1rem;
   backdrop-filter: blur(30px);
+  z-index: 1000;
 
   :hover {
     path {
-      color: red;
+      color: ${Colors.red};
     }
   }
 `;

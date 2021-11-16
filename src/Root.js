@@ -8,6 +8,7 @@ import { selectSearch } from "./Redux/selectors";
 import { SearchMovies } from "./components/SchearchMovies/Index";
 import { Header } from "./components/Header/Index";
 import { Favourites } from "./components/FavouritesWrapper/Index";
+import overrides from "./Theme/theme";
 
 function App() {
   const [favouritesOpen, setFavouritesOpen] = useState(false);
@@ -15,7 +16,7 @@ function App() {
   const noBtn = true;
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={overrides}>
       <Header
         favouritesOpen={favouritesOpen}
         setFavouritesOpen={setFavouritesOpen}

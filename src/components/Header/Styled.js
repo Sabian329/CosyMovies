@@ -8,6 +8,7 @@ export const Wrapper = styled.header`
   background-color: ${Colors.mainTheme1};
   display: flex;
   align-items: center;
+  max-width: 1920px;
   @media ${device.tablet} {
     justify-content: center;
   }

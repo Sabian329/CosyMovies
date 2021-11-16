@@ -11,6 +11,8 @@ import {
   PesronImage,
   Wrapper,
 } from "./Styled";
+import { SmallCast } from "../SmallCast/Index";
+import { SmallCastWrapper } from "../SmallCast/Styled";
 
 export const ModalContent = ({
   movie_id,
@@ -19,6 +21,7 @@ export const ModalContent = ({
   original_title,
   DisplayOption,
   media_type,
+  isSmall,
 }) => {
   const [apiData, setApiData] = useState([]);
   const [errors, setErrors] = useState(false);
@@ -42,32 +45,42 @@ export const ModalContent = ({
 
   return (
     <Wrapper>
-      <Heading padding="0.5rem" color="wheat" fontWeight="light">
-        {`Cast of ${original_name || original_title}`}
-      </Heading>
+      {isSmall ? (
+        <SmallCastWrapper>
+          {apiData?.cast?.map(
+            (item, index) => index <= 2 && <SmallCast {...item} index={index} />
+          )}
+        </SmallCastWrapper>
+      ) : (
+        <>
+          <Heading padding="0.5rem" color="wheat" fontWeight="light">
+            {`Cast of ${original_name || original_title}`}
+          </Heading>
 
-      <PersonWrapper>
-        {!apiData?.cast?.length ? (
-          <NoResults />
-        ) : (
-          apiData?.cast
-            ?.filter((item) => item.known_for_department === "Acting")
-            .map((person) => (
-              <People>
-                <PesronImage
-                  src={
-                    person.profile_path === null
-                      ? movieStar
-                      : imageBase + person.profile_path
-                  }
-                  alt="company logo"
-                />
-                <PersonName>{person.name}</PersonName>
-                <PersonCharacter>{person.character}</PersonCharacter>
-              </People>
-            ))
-        )}
-      </PersonWrapper>
+          <PersonWrapper>
+            {!apiData?.cast?.length ? (
+              <NoResults />
+            ) : (
+              apiData?.cast
+                ?.filter((item) => item.known_for_department === "Acting")
+                .map((person) => (
+                  <People>
+                    <PesronImage
+                      src={
+                        person.profile_path === null
+                          ? movieStar
+                          : imageBase + person.profile_path
+                      }
+                      alt="company logo"
+                    />
+                    <PersonName>{person.name}</PersonName>
+                    <PersonCharacter>{person.character}</PersonCharacter>
+                  </People>
+                ))
+            )}
+          </PersonWrapper>
+        </>
+      )}
     </Wrapper>
   );
 };

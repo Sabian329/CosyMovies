@@ -1,6 +1,12 @@
+html {
+  background-color: aquamarine;
+}
 body {
   overflow-x: hidden;
   margin: 0;
+  display: flex;
+  justify-content: center;
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -17,7 +23,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 5px rgb(68, 68, 68);
-  background: red;
+  background: #d21404;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {

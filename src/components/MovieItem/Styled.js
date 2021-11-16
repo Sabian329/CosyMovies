@@ -9,6 +9,7 @@ export const MainWrapper = styled.li`
   display: flex;
   align-items: center;
   margin: 0;
+  max-width: 1280px;
 `;
 
 export const Wrapper = styled.div`
@@ -22,9 +23,8 @@ export const Wrapper = styled.div`
   height: ${Sizing.mainBoxHeight};
   width: ${Sizing.mainBoxWidth};
   margin: ${Margins.Box};
-
-  -webkit-box-shadow: 5px 5px 20px ${Colors.shadow};
-  box-shadow: 5px 5px 20px ${Colors.shadow};
+  -webkit-box-shadow: 5px 5px 40px ${Colors.shadow};
+  box-shadow: 5px 5px 40px ${Colors.shadow};
   overflow-y: hidden;
   @media ${device.tablet} {
     width: ${Sizing.mobileBoxWidth};
@@ -61,4 +61,5 @@ export const CircularProgressWrapper = styled.div`
   border-radius: 50%;
   width: max-content;
   position: absolute;
+  margin: 1rem;
 `;

@@ -28,6 +28,7 @@ export const ScrollWrapper = styled.div`
   overflow-x: scroll;
   background-color: ${Colors.mainTheme};
   scroll-behavior: smooth;
+  max-width: 1920px;
   @media ${device.tablet} {
     height: ${Sizing.mobileScrollBoxWrapperHeight};
   }
@@ -41,7 +42,7 @@ export const ScrollWrapper = styled.div`
   }
   ::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 5px grey;
-    background: red;
+    background: ${Colors.red};
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {

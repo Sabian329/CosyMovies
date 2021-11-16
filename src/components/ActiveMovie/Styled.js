@@ -4,15 +4,14 @@ import { Margins, Sizing } from "../../Theme/Sizing";
 import { device } from "../../Theme/MediaQueries";
 
 export const Wrapper = styled.div`
-  background-color: black;
-  position: relative;
+  background-color: ${Colors.mainTheme};
   border-radius: 26px;
   height: ${Sizing.mainBoxHeight};
   width: ${Sizing.mainBoxWidth};
   margin: ${Margins.Box};
   -webkit-box-shadow: 5px 5px 20px ${Colors.shadow};
   box-shadow: 5px 5px 20px ${Colors.shadow};
-  padding-top: 0.5rem;
+
   @media ${device.tablet} {
     width: ${Sizing.mobileBoxWidth};
     height: ${Sizing.mobileBoxHeight};
@@ -25,21 +24,43 @@ export const Wrapper = styled.div`
     font-size: 0.9rem;
   }
 `;
-export const MoviePoster = styled.img`
+export const ImgSec = styled.div`
+  position: relative;
+  p {
+    color: wheat;
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  h2 {
+    margin-bottom: 0.2rem;
+    color: wheat;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  button {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+  }
+`;
+export const HeaderRelease = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
   position: absolute;
   bottom: 0;
+  z-index: 100;
+  margin: 0 0 1.5rem 1rem;
+`;
+export const MoviePoster = styled.img`
+  top: 0;
   height: 12rem;
-  border-radius: 0 0 26px 26px;
-  -webkit-mask-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.8, black),
-    color-stop(0.2, black),
-    color-stop(0.4, black),
-    color-stop(0, rgba(0, 0, 0, 0.6)),
-    color-stop(0, rgba(0, 0, 0, 0))
-  );
+  border-radius: 26px 26px 0 0;
+  -webkit-mask-image: linear-gradient(to top, transparent 1%, black 50%);
+  mask-image: linear-gradient(to top, transparent 1%, black 50%);
   @media ${device.tablet} {
     height: ${Sizing.mobileSmallImageHeight};
   }
@@ -50,7 +71,6 @@ export const OverviewWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   height: ${Sizing.overviewHeight};
-  overflow-y: scroll;
 
   @media ${device.tablet} {
     height: ${Sizing.mobileoverviewHeight};
@@ -74,22 +94,20 @@ export const OverviewWrapper = styled.div`
 `;
 export const Buttons = styled.div`
   display: flex;
-  position: absolute;
-  bottom: 0px;
-  right: 0;
   z-index: 100;
-  overflow: hidden;
-  border-radius: 0 0 26px 26px;
   width: 100%;
 
   button {
-    background-color: ${Colors.mainTheme1};
-    width: 10rem;
-    height: 2rem;
-    color: wheat;
+    background-color: wheat;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    border-radius: 5px;
+    color: #000000;
     border: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 1.4rem 0 0 0.6rem;
     :hover {
-      background-color: ${Colors.mainTheme};
+      background-color: ${Colors.mainTheme1};
     }
     @media ${device.tablet} {
       width: 7rem;

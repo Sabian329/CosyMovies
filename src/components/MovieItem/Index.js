@@ -11,6 +11,7 @@ import { ActiveMovie } from "../ActiveMovie/Index";
 import { AnimatePresence } from "framer-motion";
 import projector from "../../Asets/projector3.png";
 import { Modal } from "../Modal/Index";
+import { Colors } from "../../Theme/Colors";
 
 const variants = {
   open: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -67,9 +68,9 @@ export const MovieItem = ({
               {vote_average && (
                 <CircularProgressWrapper>
                   <CircularProgress
-                    thickness="12px"
+                    thickness="10px"
                     value={vote_average * 10}
-                    color="red"
+                    color="grey"
                   >
                     <CircularProgressLabel color="white" fontSize="xs">
                       {vote_average}
@@ -87,7 +88,6 @@ export const MovieItem = ({
                 color="white"
                 padding="1rem"
               >
-                {" "}
                 {overview !== undefined
                   ? overview?.substring(0, 100) + "..." || "opis"
                   : "Sorry, there is no description."}
@@ -107,6 +107,9 @@ export const MovieItem = ({
               id={id}
               media_type={media_type}
               DisplayOption={DisplayOption}
+              release_date={release_date}
+              first_air_date={first_air_date}
+              isOpen={isOpen}
             />
           </motion.div>
         </motion.div>

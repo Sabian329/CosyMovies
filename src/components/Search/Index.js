@@ -58,7 +58,7 @@ export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
         />
       </Stack>
       <button type="submit" value="Submit" onClick={() => startSearching()}>
-        <SearchIcon w={5} h={5} color="red" />
+        <SearchIcon w={5} h={5} color={Colors.red} />
       </button>
       {searchState.isOpen && (
         <button onClick={() => closeAndResetInput()}>
@@ -69,7 +69,7 @@ export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
         <Heading
           fontSize="1rem"
           fontWeight="medium"
-          color={favouritesOpen && "#ff0000"}
+          color={favouritesOpen && Colors.red}
         >
           Favourites
         </Heading>
