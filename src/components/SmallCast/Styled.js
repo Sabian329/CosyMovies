@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../Theme/MediaQueries";
 
 export const Wrapper = styled.div`
   background-color: black;
@@ -7,6 +8,10 @@ export const Wrapper = styled.div`
   margin: 0 0.2rem 0 0.2rem;
   border-radius: 6px;
   overflow: hidden;
+  @media ${device.tablet} {
+    width: 5rem;
+    margin: 0 0.7rem 0 0.7rem;
+  }
 
   img {
     -webkit-mask-image: -webkit-gradient(

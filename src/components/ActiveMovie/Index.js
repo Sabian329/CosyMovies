@@ -1,6 +1,7 @@
 import { Heading, Text } from "@chakra-ui/layout";
 import React, { useEffect, useState } from "react";
 import {
+  ButtonMore,
   Buttons,
   HeaderRelease,
   ImgSec,
@@ -30,6 +31,7 @@ export const ActiveMovie = ({
   first_air_date,
   id,
   isOpen,
+  isMobile,
 }) => {
   const dispatch = useDispatch();
   const favouritesState = useSelector(selectaddToFavourites);
@@ -99,10 +101,11 @@ export const ActiveMovie = ({
             DisplayOption={DisplayOption}
             media_type={media_type}
             isSmall={true}
+            isMobile={isMobile}
           />
-          <Buttons>
+          <ButtonMore>
             <button onClick={(proxy) => OpenModal(proxy)}>See full cast</button>
-          </Buttons>
+          </ButtonMore>
         </OverviewWrapper>
       </Wrapper>
     </>

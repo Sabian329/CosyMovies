@@ -22,6 +22,9 @@ export const Wrapper = styled.div`
     color: white;
     margin: 1rem;
     font-size: 0.9rem;
+    @media ${device.tablet} {
+      font-size: 0.7rem;
+    }
   }
 `;
 export const ImgSec = styled.div`
@@ -30,12 +33,20 @@ export const ImgSec = styled.div`
     color: wheat;
     font-size: 0.7rem;
     margin: 0;
+    @media ${device.tablet} {
+      font-size: 0.5rem;
+      color: #ffff;
+    }
   }
   h2 {
     margin-bottom: 0.2rem;
     color: wheat;
     font-weight: 500;
     font-size: 1.5rem;
+    @media ${device.tablet} {
+      font-size: 0.7rem;
+      padding: 0 0.5rem 0 0;
+    }
   }
   button {
     position: absolute;
@@ -92,11 +103,10 @@ export const OverviewWrapper = styled.div`
     background: #b30000;
   }
 `;
-export const Buttons = styled.div`
-  display: flex;
+export const ButtonMore = styled.div`
   z-index: 100;
-  width: 100%;
 
+  width: 100%;
   button {
     background-color: wheat;
     padding: 0.2rem 1rem 0.2rem 1rem;
@@ -106,11 +116,14 @@ export const Buttons = styled.div`
     font-weight: 500;
     font-size: 0.9rem;
     margin: 1.4rem 0 0 0.6rem;
+
     :hover {
       background-color: ${Colors.mainTheme1};
     }
     @media ${device.tablet} {
       width: 7rem;
+      padding: 0.5rem 1rem 0.2rem 0.5rem;
+      margin: 0.8rem 0 0 1.2rem;
     }
   }
 `;

@@ -93,7 +93,12 @@ export const MoviesWrapper = ({ option, noBtn, trending }) => {
       <ScrollWrapper ref={scrollInside}>
         <Wrapper>
           {apiData?.results?.map((item) => (
-            <MovieItem {...item} key={item.id} DisplayOption={DisplayOption} />
+            <MovieItem
+              isMobile={isMobile}
+              {...item}
+              key={item.id}
+              DisplayOption={DisplayOption}
+            />
           ))}
         </Wrapper>
       </ScrollWrapper>

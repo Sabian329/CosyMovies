@@ -13,6 +13,8 @@ import {
 } from "./Styled";
 import { SmallCast } from "../SmallCast/Index";
 import { SmallCastWrapper } from "../SmallCast/Styled";
+import { useWindowSize } from "../../Hooks/useWindowSize";
+import { size } from "../../Theme/MediaQueries";
 
 export const ModalContent = ({
   movie_id,
@@ -22,9 +24,11 @@ export const ModalContent = ({
   DisplayOption,
   media_type,
   isSmall,
+  isMobile,
 }) => {
   const [apiData, setApiData] = useState([]);
   const [errors, setErrors] = useState(false);
+
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/${
@@ -35,7 +39,6 @@ export const ModalContent = ({
       .then(
         (result) => {
           setApiData({ ...result });
-          console.log(apiData.cast);
         },
         (error) => {
           setErrors(error);
@@ -48,7 +51,10 @@ export const ModalContent = ({
       {isSmall ? (
         <SmallCastWrapper>
           {apiData?.cast?.map(
-            (item, index) => index <= 2 && <SmallCast {...item} index={index} />
+            (item, index) =>
+              index <= (isMobile ? 1 : 2) && (
+                <SmallCast {...item} index={index} />
+              )
           )}
         </SmallCastWrapper>
       ) : (

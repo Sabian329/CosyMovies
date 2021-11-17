@@ -35,6 +35,7 @@ export const MovieItem = ({
   media_type,
   DisplayOption,
   id,
+  isMobile,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -110,6 +111,7 @@ export const MovieItem = ({
               release_date={release_date}
               first_air_date={first_air_date}
               isOpen={isOpen}
+              isMobile={isMobile}
             />
           </motion.div>
         </motion.div>
@@ -125,6 +127,7 @@ export const MovieItem = ({
           original_name={original_name}
           media_type={media_type}
           DisplayOption={DisplayOption}
+          isMobile={isMobile}
         />
       )}
     </MainWrapper>
