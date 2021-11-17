@@ -9,6 +9,7 @@ import { SearchMovies } from "./components/SchearchMovies/Index";
 import { Header } from "./components/Header/Index";
 import { Favourites } from "./components/FavouritesWrapper/Index";
 import overrides from "./Theme/theme";
+import { Footer } from "./components/Footer/Index";
 
 function App() {
   const [favouritesOpen, setFavouritesOpen] = useState(false);
@@ -33,6 +34,7 @@ function App() {
           <MoviesWrapper option={Baselink.upcomming} noBtn={noBtn} />
         </>
       )}
+      <Footer />
     </ChakraProvider>
   );
 }

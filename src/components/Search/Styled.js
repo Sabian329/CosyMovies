@@ -16,6 +16,7 @@ export const Wrapper = styled.nav`
     padding: ${InputSize.paddingWrapperMobile};
     justify-content: space-between;
     width: 90vw;
+    margin: 0;
   }
   input {
     border: none;
