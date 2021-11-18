@@ -1,6 +1,6 @@
 import React from "react";
 import { imageBase } from "../../Constatns/ImageBase";
-import movieStar from "../../Asets/moviestar.png";
+import movieStar from "../../Assets/moviestar.png";
 import { Text, Wrapper } from "./Styled";
 
 export const SmallCast = ({ name, character, profile_path }) => {

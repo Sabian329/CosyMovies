@@ -14,7 +14,7 @@ const overrides = extendTheme({
     global: (props) => ({
       body: {
         fontFamily: "body",
-        bg: Colors.body,
+        bg: "#0f0f0f",
       },
     }),
   },

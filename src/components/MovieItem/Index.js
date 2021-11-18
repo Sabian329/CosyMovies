@@ -9,9 +9,8 @@ import {
 import { motion } from "framer-motion";
 import { ActiveMovie } from "../ActiveMovie/Index";
 import { AnimatePresence } from "framer-motion";
-import projector from "../../Asets/projector3.png";
+import projector from "../../Assets/projector3.png";
 import { Modal } from "../Modal/Index";
-import { Colors } from "../../Theme/Colors";
 
 const variants = {
   open: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -35,7 +34,6 @@ export const MovieItem = ({
   media_type,
   DisplayOption,
   id,
-  isMobile,
 }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -111,7 +109,6 @@ export const MovieItem = ({
               release_date={release_date}
               first_air_date={first_air_date}
               isOpen={isOpen}
-              isMobile={isMobile}
             />
           </motion.div>
         </motion.div>
@@ -127,7 +124,6 @@ export const MovieItem = ({
           original_name={original_name}
           media_type={media_type}
           DisplayOption={DisplayOption}
-          isMobile={isMobile}
         />
       )}
     </MainWrapper>

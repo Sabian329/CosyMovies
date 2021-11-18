@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/layout";
 import React from "react";
-import clap from "../../Asets/clap.png";
+import clap from "../../Assets/clap.png";
 import { Wrapper } from "./Styled";
 
 export const LoadingWindow = () => {

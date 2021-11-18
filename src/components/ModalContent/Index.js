@@ -1,7 +1,7 @@
 import { Heading } from "@chakra-ui/layout";
 import React, { useEffect, useState } from "react";
 import { imageBase } from "../../Constatns/ImageBase";
-import movieStar from "../../Asets/moviestar.png";
+import movieStar from "../../Assets/moviestar.png";
 import { NoResults } from "../NoResult/Index";
 import {
   People,
@@ -14,7 +14,6 @@ import {
 import { SmallCast } from "../SmallCast/Index";
 import { SmallCastWrapper } from "../SmallCast/Styled";
 import { useWindowSize } from "../../Hooks/useWindowSize";
-import { size } from "../../Theme/MediaQueries";
 
 export const ModalContent = ({
   movie_id,
@@ -24,10 +23,14 @@ export const ModalContent = ({
   DisplayOption,
   media_type,
   isSmall,
-  isMobile,
 }) => {
   const [apiData, setApiData] = useState([]);
   const [errors, setErrors] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const size = useWindowSize();
+  useEffect(() => {
+    size.width >= 768 ? setIsMobile(false) : setIsMobile(true);
+  }, [size]);
 
   useEffect(() => {
     fetch(

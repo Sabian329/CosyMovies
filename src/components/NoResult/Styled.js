@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "../../Theme/Colors";
-import projector from "../../Asets/projector3.png";
+import projector from "../../Assets/projector3.png";
 
 export const Wrapper = styled.section`
   width: 100vw;

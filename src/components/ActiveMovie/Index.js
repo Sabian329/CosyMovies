@@ -10,7 +10,7 @@ import {
   Wrapper,
 } from "./Styled";
 import { imageBase } from "../../Constatns/ImageBase";
-import clap from "../../Asets/clap.png";
+import clap from "../../Assets/clap.png";
 import { useDispatch, useSelector } from "react-redux";
 import { selectaddToFavourites } from "../../Redux/selectors";
 import { addItem, deleteItem } from "../../Redux/slices/addToFavSlice";
@@ -31,7 +31,6 @@ export const ActiveMovie = ({
   first_air_date,
   id,
   isOpen,
-  isMobile,
 }) => {
   const dispatch = useDispatch();
   const favouritesState = useSelector(selectaddToFavourites);
@@ -101,7 +100,6 @@ export const ActiveMovie = ({
             DisplayOption={DisplayOption}
             media_type={media_type}
             isSmall={true}
-            isMobile={isMobile}
           />
           <ButtonMore>
             <button onClick={(proxy) => OpenModal(proxy)}>See full cast</button>

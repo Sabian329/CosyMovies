@@ -5,6 +5,7 @@ export const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #000000;
   color: #ffff;
   padding: 1rem 0 1rem 0;
   margin: 0 0 0 0;
@@ -17,7 +18,14 @@ export const FooterWrapper = styled.footer`
     }
   }
 `;
-
+export const MDB = styled.img`
+  width: 9.5rem;
+  margin: 1rem;
+  filter: invert(100%);
+  :hover {
+    filter: invert(0%);
+  }
+`;
 export const SocialWrapper = styled.div`
   display: flex;
 
@@ -25,12 +33,11 @@ export const SocialWrapper = styled.div`
     margin: 0.5rem;
     width: 2.5rem;
     height: 2.5rem;
-    filter: invert(50%);
   }
   a {
     :hover {
       img {
-        filter: invert(70%);
+        filter: invert(100%);
       }
     }
   }

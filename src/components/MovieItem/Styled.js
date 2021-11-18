@@ -9,7 +9,6 @@ export const MainWrapper = styled.li`
   display: flex;
   align-items: center;
   margin: 0;
-  max-width: 1280px;
 `;
 
 export const Wrapper = styled.div`

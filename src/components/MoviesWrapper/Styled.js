@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../Theme/Colors";
 import { Sizing } from "../../Theme/Sizing";
-import { device } from "../../Theme/MediaQueries";
+import { device, size } from "../../Theme/MediaQueries";
 export const MainWrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ export const ScrollWrapper = styled.div`
   overflow-x: scroll;
   background-color: ${Colors.mainTheme};
   scroll-behavior: smooth;
-  max-width: 1920px;
+  max-width: ${size.laptopL};
   @media ${device.tablet} {
     height: ${Sizing.mobileScrollBoxWrapperHeight};
   }
@@ -44,6 +44,7 @@ export const ScrollWrapper = styled.div`
     box-shadow: inset 0 0 5px grey;
     background: ${Colors.red};
     border-radius: 10px;
+    padding 1rem;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000;

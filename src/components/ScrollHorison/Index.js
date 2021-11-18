@@ -1,6 +1,6 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import React, { useState } from "react";
-import { BtnLeft, BtnRight, MainWrapper } from "./Syled";
+import React from "react";
+import { BtnLeft, BtnRight } from "./Syled";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const ScrollHorizon = ({ scrollHorisontal, isScrollMax }) => {

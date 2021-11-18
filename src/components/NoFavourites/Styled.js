@@ -9,16 +9,18 @@ export const Wrapper = styled.section`
   font-size: 5rem;
   img {
     display: block;
-    width: 300px;
   }
 `;
 
-export const Dot = styled.div`
-  width: 1.2vh;
-  height: 1.2vh;
-  border-radius: 50%;
-  background-color: red;
+export const Cursor = styled.img`
+  width: 3rem;
   position: absolute;
-  bottom: 450px;
-  right: 450px;
+  right: 1rem;
+  top: 5rem;
+`;
+export const Animate = styled.div`
+  position: relative;
+  margin: 2rem;
+  path {
+  }
 `;

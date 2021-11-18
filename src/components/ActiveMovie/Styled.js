@@ -5,6 +5,7 @@ import { device } from "../../Theme/MediaQueries";
 
 export const Wrapper = styled.div`
   background-color: ${Colors.mainTheme};
+  background-color: black;
   border-radius: 26px;
   height: ${Sizing.mainBoxHeight};
   width: ${Sizing.mainBoxWidth};

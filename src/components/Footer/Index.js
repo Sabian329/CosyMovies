@@ -1,9 +1,10 @@
 import { Heading } from "@chakra-ui/layout";
 import React from "react";
-import { FooterWrapper, SocialWrapper } from "./Styled";
-import fbLogo from "../../Asets/fb-logo2.png";
-import inLogo from "../../Asets/linkedin-logo.png";
-import gitLogo from "../../Asets/github-logo.png";
+import { FooterWrapper, MDB, SocialWrapper } from "./Styled";
+import fbLogo from "../../Assets/fb.png";
+import inLogo from "../../Assets/linked.png";
+import gitLogo from "../../Assets/git.png";
+import tmdb from "../../Assets/tmdb.svg";
 
 export const Footer = () => {
   return (
@@ -31,6 +32,9 @@ export const Footer = () => {
         {"made by "}
         <em>Sabian Węgliński</em>
       </Heading>
+      <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
+        <MDB src={tmdb} alt="the movie db logo" />
+      </a>
     </FooterWrapper>
   );
 };
