@@ -7,8 +7,13 @@ export const Wrapper = styled.section`
   align-items: center;
   flex-direction: column;
   font-size: 5rem;
+
   img {
     display: block;
+  }
+  p {
+    font-size: 1rem;
+    color: #ffff;
   }
 `;
 
