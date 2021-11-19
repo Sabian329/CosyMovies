@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../Theme/MediaQueries";
 
 export const Wrapper = styled.section`
   color: red;
@@ -7,13 +8,18 @@ export const Wrapper = styled.section`
   align-items: center;
   flex-direction: column;
   font-size: 5rem;
-
-  img {
-    display: block;
+  @media ${device.tablet} {
+    height: 20rem;
+    img {
+      width: 15rem;
+    }
   }
+
   p {
     font-size: 1rem;
     color: #ffff;
+    text-align: center;
+    padding: 0 2rem 0 2rem;
   }
 `;
 

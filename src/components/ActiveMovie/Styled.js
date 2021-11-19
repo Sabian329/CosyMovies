@@ -78,17 +78,6 @@ export const MoviePoster = styled.img`
   }
 `;
 
-export const MoviePosterLogo = styled.img`
-  top: 0;
-  height: 7rem;
-  border-radius: 26px 26px 0 0;
-  -webkit-mask-image: linear-gradient(to top, transparent 1%, black 50%);
-  mask-image: linear-gradient(to top, transparent 1%, black 50%);
-  @media ${device.tablet} {
-    height: ${Sizing.mobileSmallImageHeight};
-  }
-`;
-
 export const OverviewWrapper = styled.div`
   display: flex;
   flex-direction: column;

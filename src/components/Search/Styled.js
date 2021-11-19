@@ -47,3 +47,8 @@ export const IconWrapper = styled.div`
   bottom: 0;
   left: 0;
 `;
+
+export const Btns = styled.div`
+  display: flex;
+  justify-content: center;
+`;

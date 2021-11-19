@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Stack, Heading } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { Colors } from "../../Theme/Colors";
-import { Wrapper } from "./Styled";
+import { Btns, Wrapper } from "./Styled";
 import { SearchIcon, CloseIcon } from "@chakra-ui/icons";
 import { useSelector } from "react-redux";
 import {
@@ -57,23 +57,25 @@ export const Search = ({ favouritesOpen, setFavouritesOpen }) => {
           onChange={(e) => inputHandle(e)}
         />
       </Stack>
-      <button type="submit" value="Submit" onClick={() => startSearching()}>
-        <SearchIcon w={5} h={5} color={Colors.red} />
-      </button>
-      {searchState.isOpen && (
-        <button onClick={() => closeAndResetInput()}>
-          <CloseIcon color={Colors.mainTheme1} />
+      <Btns>
+        <button type="submit" value="Submit" onClick={() => startSearching()}>
+          <SearchIcon w={5} h={5} color={Colors.red} />
         </button>
-      )}
-      <button onClick={() => setFavouritesOpen(!favouritesOpen)}>
-        <Heading
-          fontSize="1rem"
-          fontWeight="medium"
-          color={favouritesOpen && Colors.red}
-        >
-          Favourites
-        </Heading>
-      </button>
+        {searchState.isOpen && (
+          <button onClick={() => closeAndResetInput()}>
+            <CloseIcon color={Colors.mainTheme1} />
+          </button>
+        )}
+        <button onClick={() => setFavouritesOpen(!favouritesOpen)}>
+          <Heading
+            fontSize="1rem"
+            fontWeight="medium"
+            color={favouritesOpen && Colors.red}
+          >
+            Favourites
+          </Heading>
+        </button>
+      </Btns>
     </Wrapper>
   );
 };
