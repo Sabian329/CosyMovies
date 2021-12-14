@@ -51,7 +51,7 @@ You can run this project by.
 [stars-shield]: https://img.shields.io/github/stars/pislagz/manycoins.svg?style=for-the-badge
 [stars-url]: https://github.com/Sabian329/CosyMovies/stargazers
 [issues-shield]: https://img.shields.io/github/issues/pislagz/manycoins.svg?style=for-the-badge
-[issues-url]: https://github.com/Sabian329/CosyCurrency/issues
+[issues-url]: https://github.com/Sabian329/CosyMovies/issues
 [license-shield]: https://img.shields.io/github/license/pislagz/manycoins?style=for-the-badge
 [license-url]:https://github.com/Sabian329/sabian/blob/main/MIT.md
 [react-shield]: https://img.shields.io/static/v1?label=&message=React&color=gray&style=for-the-badge&logo=react
