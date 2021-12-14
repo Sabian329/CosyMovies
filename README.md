@@ -49,7 +49,7 @@ You can run this project by.
    ```
 
 [stars-shield]: https://img.shields.io/github/stars/pislagz/manycoins.svg?style=for-the-badge
-[stars-url]: https://github.com/Sabian329/CosyCurrency/stargazers
+[stars-url]: https://github.com/Sabian329/CosyMovies/stargazers
 [issues-shield]: https://img.shields.io/github/issues/pislagz/manycoins.svg?style=for-the-badge
 [issues-url]: https://github.com/Sabian329/CosyCurrency/issues
 [license-shield]: https://img.shields.io/github/license/pislagz/manycoins?style=for-the-badge
