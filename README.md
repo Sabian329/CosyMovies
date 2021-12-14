@@ -37,7 +37,7 @@ You can run this project by.
 
  1. Clone the repo
    ```sh
-   git clone https://github.com/pislagz/manycoins.git
+   git clone https://github.com/Sabian329/CosyMovies
    ```
  2. Install NPM packages
    ```sh
