@@ -50,11 +50,11 @@ You can run this project by.
    npm start
    ```
 
-[stars-shield]: https://img.shields.io/github/stars/pislagz/manycoins.svg?style=for-the-badge
+[stars-shield]:https://img.shields.io/github/stars/sabian329/cosymovies.svg?style=for-the-badge
 [stars-url]: https://github.com/Sabian329/CosyMovies/stargazers
-[issues-shield]: https://img.shields.io/github/issues/pislagz/manycoins.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/sabian329/cosymovies.svg?style=for-the-badge
 [issues-url]: https://github.com/Sabian329/CosyMovies/issues
-[license-shield]: https://img.shields.io/github/license/pislagz/manycoins?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/sabian329/cosymovies?style=for-the-badge
 [license-url]:https://github.com/Sabian329/CosyMovies/blob/main/LICENSE.md
 [react-shield]: https://img.shields.io/static/v1?label=&message=React&color=gray&style=for-the-badge&logo=react
 [react-url]: https://reactjs.org
