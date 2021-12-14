@@ -31,6 +31,8 @@ Choose from over 10 thousand productions available. Get to know insights and cas
 - [React.js](https://reactjs.org/)
 - [styled-components](https://styled-components.com/)
 - [The Movie Database](https://www.themoviedb.org/)
+- [Chakra UI](https://chakra-ui.com/)
+- [Framer Motion](https://www.framer.com/docs/)
 
   
 You can run this project by.
